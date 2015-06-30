@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Tree Example</title>
+
+    <style>
+  
+  .node {
+    cursor: pointer;
+  }
+
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+
+  .node text {
+    font: 12px sans-serif;
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+  
+    </style>
+
+  </head>
+
+  <body>
+
+<!-- load the d3.js library --> 
+<script src="http://d3js.org/d3.v3.min.js"></script>
+  
+<script>
+
+var treeData = [
+  {
+    "name": "Much Better Prices",
+    "parent": "null",
+    "children": [
+    var action_key;
+    for(action_key in actions){
+      if actions[action_key]['category'] == "Much Better Prices"{
+
+      }
+    }
+      var beahvior_id;
+      for(behavior_id = 0
+      {
+        "name": "Level 2: A",
+        "parent": "Top Level",
+        "children": [
+          {
+            "name": "Son of A",
+            "parent": "Level 2: A"
+          },
+          {
+            "name": "Son of A",
+            "parent": "Level 2: A"
+          },
+          {
+            "name": "Daughter of A",
+            "parent": "Level 2: A"
+          }
+        ]
+      },
+      {
+        "name": "Level 2: B",
+        "parent": "Top Level"
+      }
+    ]
+  }
+];
+
+
+/*
+var results = {
+  // universal access
+   "increased_preventative_medicine":{  
+      "name":"Increased Preventative Medicine",
+      "description":"",
+      "category":"universal_access"
+   },
+   "healthier_people":{  
+      "name":"More Health Conscious People",
+      "description":"",
+      "category":"universal_access"
+   },
+   "increased_efficiency":{  
+      "name":"Increased Efficiency",
+      "description":"",
+      "category":"universal_access"
+   },
+
+   // near perfect quality
+   "reduced_errors":{  
+      "name":"Reduced Errors",
+      "description":"",
+      "category":"near_perfect_quality"
+   },   
+   "more_equitable":{  
+      "name":"More Equitable",
+      "description":"",
+      "category":"near_perfect_quality"
+   },
+   "better_care":{  
+      "name":"Better Care",
+      "description":"",
+      "category":"near_perfect_quality"
+   },
+
+   // much better prices
+   "fewer_hospital_visits":{  
+      "name":"Fewer Hospital Visits",
+      "description":"",
+      "category":"much_better_prices"
+   },
+   "better_prices":{  
+      "name":"Better Costs",
+      "description":"",
+      "category":"better_prices"
+   },
+    "fewer_unnecessary_tests":{  
+      "name":"Fewer Unnecessary Tests",
+      "description":"",
+      "category":"better_prices"
+   }
+};
+
+var behaviors = {
+  // universal access
+  "private_options":{
+    "name":"Private Options Available",
+    "results_impacted":[],
+    "pov":"patient"
+  },
+  "everyone_gets_covered":{
+    "name":"Everyone Gets Covered",
+    "results_impacted":["better_prices","more_equitable","increased_preventative_medicine"],
+    "pov":"patient"
+  },
+  "pt_take_charge":{
+    "name":"Patients Can Take Charge of Their Own Health",
+    "results_impacted":["more_equitable","healthier_people"]
+  },
+  "self_care":{
+    "name":"Self Care",
+    "results_impacted":["better_prices", "increased_preventative_medicine"],
+    "pov":"patient"
+  },
+  "primary_care":{
+    "name":"Primary Caregivers Spend More Time with Patients, Collectively Offer More Appointments",
+    "results_impacted":["better_care", "more_equitable"],
+    "pov":"patient"
+  },
+  "improve_interoperability":{
+    "name":"Improve Interoperability",
+    "results_impacted":["better_care","fewer_unnecessary_tests","reduced_errors","increased_efficiency"],
+    "pov":"clinician"
+  },
+
+  // near perfect quality
+  "people_shop":{
+    "name":"People Shop for Quality and Cost",
+    "results_impacted":["better_prices", "better_care"],
+    "pov":"patient"
+  },
+  "people_value_life":{
+    "name":"People Value Quality of Life",
+    "results_impacted":["better_care"],
+    "pov":"patient"
+  },
+  "clinicians_communicate":{
+    "name":"Clinicians Communicate Better with Patients",
+    "results_impacted":["fewer_unnecessary_tests","fewer_hospital_visits","better_care","reduced_errors"],
+    "pov":"clinician"
+  },
+  "tailored_treatment_plans":{
+    "name":"Tailored Treatment Plans",
+    "results_impacted":["fewer_unnecessary_tests", "better_care"],
+    "pov":"clinician"
+  },
+
+  // much better prices
+  "clinicians_bill":{
+    "name":"Fees for Outcomes Instead of Fees for Services",
+    "results_impacted":["better_prices", "fewer_unnecessary_tests","increased_efficiency"],
+    "pov":"clinician"
+  },
+  "clinicians_are_not_penalized_by_law":{
+    "name":"Clinicians Don't Have to Cover Their Butts",
+    "results_impacted":["better_prices", "fewer_unnecessary_tests"],
+    "pov":"clinician"
+  }
+}
+
+var actions = {
+  // universal access
+  "single_payer":{
+    "name":"Create Single Payer System",
+    "behaviors_impacted":["private_options","everyone_gets_covered"],
+    "category":"Universal Access"
+  },
+  "give_patients_data":{
+    "name":"Give Patients Their Data",
+    "behaviors_impacted":["self_care","pt_take_charge"],
+    "category":"Universal Access"
+  },
+  "on_demand":{
+    "name":"Enable On-Demand Care",
+    "behaviors_impacted":["self_care"],
+    "category":"Universal Access"
+  },
+  "train_workers":{
+    "name":"Train More Primary Care Workers",
+    "behaviors_impacted":["primary_care"],
+    "category":"Universal Access"
+  },
+  "data_standard":{
+    "name":"Create Health Data Standard",
+    "behaviors_impacted":["improve_interoperability","people_shop"],
+    "category":"Universal Access"
+  },
+
+  // near perfect quality
+  "destigmatize_death":{
+    "name":"Destigmatize Death",
+    "behaviors_impacted":["people_value_life"],
+    "category":"Near Perfect Quality"
+  },
+  "improve_doctor_training":{
+    "name":"Improve Doctor Training",
+    "behaviors_impacted":["clinicians_communicate"],
+    "category":"Near Perfect Quality"
+  },
+  "coordinate_care":{
+    "name":"Coordinate Care",
+    "behaviors_impacted":["clinicians_communicate"],
+    "category":"Near Perfect Quality"
+  },
+  "individualize_medicine":{
+    "name":"Individuzalize Medicine",
+    "behaviors_impacted":["tailored_treatment_plans"],
+    "category":"Near Perfect Quality"
+  },
+
+  // much better prices
+  "make_prices_transparent":{
+    "name":"Make Prices Transparent",
+    "behaviors_impacted":["people_shop"],
+    "category":"Much Better Prices"
+  },
+  "incentivize_outcomes":{
+    "name":"Incentivize Outcomes",
+    "behaviors_impacted":["clinicians_bill"],
+    "category":"Much Better Prices"
+  },
+  "reform_malpractice":{
+    "name":"Reform Malpractice Laws",
+    "behaviors_impacted":["clinicians_are_not_penalized_by_law"],
+    "category":"Much Better Prices"
+  }
+}
+
+var treeData = [];
+for (var x = 0; x < actions.length; x++) {
+  current_action = actions[x]['name'];
+  collection[x]['name'] = current_action;
+  collection[x]['parent'] = actions[x]['category'];
+  for (var y = 0; y < actions['behaviors_impacted'].length; x++){
+    current_behavior = actions['behaviors_impacted'][y];
+    collection[x]['children'][y]['name'] = current_behavior;
+    collection[x]['children'][y]['parent'] = current_action;
+    for (var z = 0; z < behaviors['current_behavior']['results_impacted'].length; z++){
+    collection[x]['children'][y]['children'][z] = behaviors['current_behavior']['results_impacted'][z];
+    }
+
+  }
+
+}
+console.log(treeData)
+*/
+
+// ************** Generate the tree diagram  *****************
+var margin = {top: 20, right: 120, bottom: 20, left: 120},
+  width = 960 - margin.right - margin.left,
+  height = 500 - margin.top - margin.bottom;
+  
+var i = 0,
+  duration = 750,
+  root;
+
+var tree = d3.layout.tree()
+  .size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+  .projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width + margin.right + margin.left)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+    links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+    .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+    .attr("class", "node")
+    .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+    .on("click", click);
+
+  nodeEnter.append("circle")
+    .attr("r", 1e-6)
+    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeEnter.append("text")
+    .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+    .attr("dy", ".35em")
+    .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+    .text(function(d) { return d.name; })
+    .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+    .duration(duration)
+    .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+    .attr("r", 10)
+    .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+  nodeUpdate.select("text")
+    .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+    .duration(duration)
+    .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+    .remove();
+
+  nodeExit.select("circle")
+    .attr("r", 1e-6);
+
+  nodeExit.select("text")
+    .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+    .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+    .attr("class", "link")
+    .attr("d", function(d) {
+    var o = {x: source.x0, y: source.y0};
+    return diagonal({source: o, target: o});
+    });
+
+  // Transition links to their new position.
+  link.transition()
+    .duration(duration)
+    .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+    .duration(duration)
+    .attr("d", function(d) {
+    var o = {x: source.x, y: source.y};
+    return diagonal({source: o, target: o});
+    })
+    .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+  d.x0 = d.x;
+  d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+  d._children = d.children;
+  d.children = null;
+  } else {
+  d.children = d._children;
+  d._children = null;
+  }
+  update(d);
+}
+
+</script>
+  
+  </body>
+</html>
