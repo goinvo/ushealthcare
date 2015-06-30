@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script src="d3.parsets.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="d3.parsets.css"></link>
+		<script>
+			$(document).ready(function(e){
+				var chart = d3.parsets()
+		      		.dimensions(["Category", "Action", "Behavior", "Result"]).width(1400);
+
+				var vis = d3.select("#vis").append("svg")
+				    .attr("width", chart.width())
+				    .attr("height", chart.height());
+
+				d3.csv("goals.csv", function(error, csv) {
+					vis.datum(csv).call(chart);
+				});
+			})
+		</script>
+	</head>
+	<body>
+		<div id="vis"></div>
+	</body>
+</html>
