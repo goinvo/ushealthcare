@@ -1,0 +1,445 @@
+<html>
+	<head>
+		<style>
+		.node circle {
+			fill: #ffffff;
+			stroke: red;
+			stroke-width: 1px;
+		}
+
+		.node text { font: 12px sans-serif;}
+
+		.link {fill:none;
+			stroke: #ccc;
+			stroke-width: 2px;
+		}
+		</style>
+	</head>
+	<body>
+		<script src="http://d3js.org/d3.v3.min.js"> </script>
+		<script>
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 120, bottom: 20, left: 120},
+	width = 1500 - margin.right - margin.left,
+	height = 700 - margin.top - margin.bottom;
+	
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var treeData = [
+  {
+    "name": "Saving Healthcare in the US",
+    "parent": "null",
+    "children": [
+      {
+        "name": "Higher Quality",
+        "parent": "Saving Healthcare in the US",
+        "children": [
+          {
+            "name": "Coordinate Care",
+            "parent": "Higher Quality",
+            "children":[
+            {
+            	"name": "Clinicians Communicate Better With Patients",
+            	"parent": "Coordinate Care",
+            	"children":[
+            	{
+            		"name": "Fewer Hospital Visits",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	},
+            	{
+            		"name":"Better Care",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	},
+            	{
+            		"name":"Reduced Error",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	}]
+            }]
+          },
+          {
+            "name": "Improve Doctor Training",
+            "parent": "Higher Quality",
+            "children":[
+            {
+            	"name":"Clinicians Communicate Better With Patients",
+            	"parent": "Coordinate Care",
+            	"children":[
+            	{
+            		"name": "Fewer Hospital Visits",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	},
+            	{
+            		"name":"Better Care",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	},
+            	{
+            		"name":"Reduced Error",
+            		"parent": "Clinicians Communicate Better With Patients"
+            	}]
+            }]
+
+          },
+          {
+          	"name": "Destigmatize Death",
+          	"parent": "Higher Quality",
+          	"children":[
+          	{
+          		"name": "People Value Quality of Life",
+          		"parent": "Destigmatize Death",
+          		"children":[
+          		{
+          			"name":"More Health Conscious People",
+          			"parent": "People Value Quality of Life"
+          		}]
+          	}]
+          },
+          {
+          	"name":"Individualize Medicine",
+          	"parent":"Higher Quality",
+          	"children":[
+          	{
+          		"name": "Tailored Treatment Plans",
+          		"parent": "Individualize Medicine",
+          		"children": [
+          		{
+          			"name": "Fewer Hospital Visits",
+          			"parent": "Tailored Treatment Plans",
+          		},
+          		{
+          			"name": "Better Care",
+          			"parent": "Tailored Treatment Plans"
+          		}]
+          	}]
+          },
+          {
+          	"name": "Create Health Care Standard",
+          	"parent": "Higher Quality",
+          	"children": [
+          	{
+          		"name": "People Shop for Quality and Cost",
+          		"parent": "Create Health Care Standard",
+          		"children":[
+          		{
+          			"name": "Decreased Cost",
+          			"parent": "People Shop for Quality and Cost",
+          		},
+          		{
+          			"name": "Better Care",
+          			"parent": "People Shop for Quality and Cost"
+          		}]
+          	}]
+          }
+        ]
+      },
+      {
+        "name": "Better Cost",
+        "parent": "Saving Healthcare in the US",
+        "children":[
+        {
+        	"name":"Incentivize Outcomes",
+        	"parent":"Better Cost",
+        	"children":[
+        	{
+        		"name": "Clinicians Charge for Result, Not Services",
+        		"parent": "Incentivize Outcomes",
+        		"children": [{
+        			"name": "Increased Efficiency",
+        			"parent": "Clinicians Charge for Result, Not Services",
+        		},
+        		{
+        			"name": "Decreased Cost",
+        			"parent": "Clinicians Charge for Result, Not Services"
+        		},
+        		{
+        			"name": "Fewer Hospital Visits",
+        			"parent": "Clinicians Charge for Result, Not Services"
+        		}]
+        	}]
+        },
+        {
+        	"name":"Make Prices Transparent",
+        	"parent":"Better Cost",
+        	"children": [
+        	{
+        		"name": "People Shop for Quality and Cost",
+        		"parent": "Make Prices Transparent",
+        		"children":[
+        		{
+          			"name": "Decreased Cost",
+          			"parent": "People Shop for Quality and Cost",
+          		},
+          		{
+          			"name": "Better Care",
+          			"parent": "People Shop for Quality and Cost"
+        		}]
+        	}]
+        },
+        {
+        	"name":"Reform Malpractice Laws",
+        	"parent":"Better Cost",
+        	"children": [
+        	{
+        		"name": "something about covering butts",
+        		"parent": "Reform Malpractice Laws",
+        		"children":[
+        		{
+        			"name": "Decreased Cost",
+        			"parent": "something about covering butts"
+        		},
+        		{
+        			"name": "Fewer Unnecessary Tests",
+        			"parent": "something about covering butts"
+        		}]
+        	}]
+        }]
+      },
+      {
+      	"name": "Increased Access",
+        "parent": "Saving Healthcare in the US",
+        "children":[
+        {
+        	"name":"Improve Interoperability",
+        	"parent":"Increased Access",
+        	"children":[
+        	{
+        		"name": "People Shop for Quality and Cost",
+        		"parent": "Improve Interoperability",
+        		"children":[
+        		{
+          			"name": "Decreased Cost",
+          			"parent": "People Shop for Quality and Cost",
+          		},
+          		{
+          			"name": "Better Care",
+          			"parent": "People Shop for Quality and Cost"
+        		}]
+        	}]
+        },
+        {
+        	"name":"Create Single-Payer System",
+        	"parent":"Increased Access",
+        	"children":[
+        	{
+        		"name": "Everyone Gets Covered, Private Options Available",
+        		"parent": "Create Single-Payer System",
+        		"children": [
+        		{
+        			"name": "More Equitable",
+        			"parent": "Everyone Gets Covered, Private Options Available"
+        		},
+        		{
+        			"name": "Decreased Cost",
+        			"parent": "Everyone Gets Covered, Private Options Available"
+        		},
+        		{
+        			"name": "Increased Preventative Medicine",
+        			"parent": "Everyone Gets Covered, Private Options Available"
+        		},]
+        	}]
+        },
+        {
+        	"name":"Enable On-Demand Care",
+        	"parent":"Increased Access",
+        	"children":[
+        	{
+        		"name":"Self-Care",
+        		"parent":"Enable On-Demand Care",
+        		"children":[
+        		{
+        			"name":"More Health-Conscious People",
+        			"parent":"Self-Care",
+        		},
+        		{
+        			"name":"Fewer Hospital Visits",
+        			"parent":"Self-Care",
+        		}]
+        	}]
+        },
+        {
+        	"name":"Train More Primary Health Workers",
+        	"parent":"Increased Access",
+        	"children":[
+        	{
+        		"name":"Primary Caregivers Spend More Time With Patients",
+        		"parent": "Increased Access",
+        		"children":[
+        		{
+        			"name":"Better Care",
+        			"parent":"Primary Caregivers Spend More Time With Patients",
+        		},
+        		{
+        			"name":"More Equitable",
+        			"parent":"Primary Caregivers Spend More Time With Patients",
+        		}]
+        	}]
+        },
+        {
+        	"name":"Give Patients Their Data",
+        	"parent":"Increased Access",
+        	"children": [
+        	{
+        		"name":"Self-Care",
+        		"parent":"Give Patients Their Data",
+        		"children":[
+        		{
+        			"name":"More Health-Conscious People",
+        			"parent":"Self-Care",
+        		},
+        		{
+        			"name":"Fewer Hospital Visits",
+        			"parent":"Self-Care",
+        		}]
+        	},
+        	{
+        		"name":"Patients Take Charge of Own Health",
+        		"parent":"Give Patients Their Data",
+        		"children":[
+        		{
+        			"name":"More Equitable",
+        			"parent":"Patients Take Charge of Own Health",
+        		},
+        		{
+        			"name":"More Health-Conscious People",
+        			"parent":"Patients Take Charge of Own Health",
+        		}]
+        	}]
+        }]
+    }
+    ]
+  }
+];
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 250; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+  nodeEnter.append("circle")
+	  .attr("r", 2)
+	  .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
+
+ /* nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6);
+	  */
+	nodeEnter.append("text")
+	  .attr("y", function(d){return d.children || d._children ? -15 : 0; })
+	  .attr("x", function(d){return d.children || d._children ? 0 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d){return d.children || d._children ? "middle" : "start"; })
+	  .text(function(d) {return d.name; })
+	  .style("fill-opacity", 1);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", 5)
+	  .style("fill", function(d) { return d._children ? "lightcoral" : "#fff"; });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+</script>
+	
+	</body>
+</html>
