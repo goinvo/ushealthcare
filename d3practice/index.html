@@ -34,10 +34,16 @@
                 font-family: sans-serif;
                 font-size: 11px;
             }
-            h1 {
+            #update {
                 cursor: pointer;
             }
-            h2 {
+            #updateScatter {
+                cursor: pointer;
+            }
+            #delete  {
+                cursor: pointer;\
+            }
+            #add {
                 cursor: pointer;
             }
         </style>
@@ -46,7 +52,12 @@
 
     <body>
         
-        <h1>Click on this text to update the chart</h1>
+        <h1>Column Graph</h1>
+        <p>
+            <div id="update">Update data</div>
+            <div id="add">Add column</div>
+            <div id="delete">Delete column</div>
+        </p>
 
 
          <script type="text/javascript">
@@ -155,11 +166,147 @@
                 .attr("font-size", "11px")
                 .attr("text-ancher", "middle");
 
-
-            // Update Data
             var maxValue = 100;
 
-            d3.select("h1")
+
+            
+            // Add Data
+            d3.select("#add")
+                .on("click", function() {
+                    var newNum = Math.floor(Math.random() * maxValue);
+                    dataset.push(newNum);
+
+                    // update all rects
+                    xScale.domain(d3.range(dataset.length));
+                    yScale.domain([0, d3.max(dataset)]);
+
+                    // Select
+                    var bars = svg.selectAll("rect")
+                        .data(dataset);
+
+                    // Enter
+                    bars.enter()
+                        .append("rect")
+                        .attr("x", w)
+                        .attr("y", function(d) {
+                            return h - yScale(d);
+                        })
+                        .attr("width", xScale.rangeBand())
+                        .attr("height", function(d) {
+                            return yScale(d);
+                        })
+                        .attr("fill", function(d) {
+                            return "rgb(0, 0, " +(d*10) +")";
+                        });
+
+                    // Update
+                    bars.transition()
+                        .duration(500)
+                        .attr("x", function(d, i) {
+                            return xScale(i);
+                        })
+                        .attr("y", function(d) {
+                            return h - yScale(d);
+                        })
+                        .attr("width", xScale.rangeBand())
+                        .attr("height", function(d) {
+                            return yScale(d)
+                        })
+
+                    // update all text
+                    svg.selectAll("text")
+                        .data(dataset)
+                        .transition()
+                        .duration(500) // motion duration
+                        .ease("cubic") // motion style
+                        .delay(function(d, i) {
+                            return i;
+                        })
+                        .text(function(d) {
+                            return d;
+                        })
+                        .attr("x", function(d, i) {
+                            return xScale(i) + xScale.rangeBand()/2;
+                        })
+                        .attr("y", function(d) {
+                            return h - yScale(d) +14;
+                        });
+                });
+    
+            // Delete column
+            d3.select("#delete")
+                .on("click", function() {
+
+                    // Remove one value from dataset
+                    dataset.shift();
+
+                    // update scale
+                    xScale.domain(d3.range(dataset.length));
+                    yScale.domain([0, d3.max(dataset)]);
+
+                    // Select
+                    var bars = svg.selectAll("rect")
+                        .data(dataset);
+
+                    // Enter
+                    bars.enter()
+                        .append("rect")
+                        .attr("x", w)
+                        .attr("y", function(d) {
+                            return h - yScale(d);
+                        })
+                        .attr("width", xScale.rangeBand())
+                        .attr("height", function(d) {
+                            return yScale(d);
+                        })
+                        .attr("fill", function(d) {
+                            return "rgb(0, 0, " +(d*10) +")";
+                        });
+
+                    // Update
+                    bars.transition()
+                        .duration(500)
+                        .attr("x", function(d, i) {
+                            return xScale(i);
+                        })
+                        .attr("y", function(d) {
+                            return h - yScale(d);
+                        })
+                        .attr("width", xScale.rangeBand())
+                        .attr("height", function(d) {
+                            return yScale(d)
+                        })
+
+                    // update all text
+                    svg.selectAll("text")
+                        .data(dataset)
+                        .transition()
+                        .duration(500) // motion duration
+                        .ease("cubic") // motion style
+                        .delay(function(d, i) {
+                            return i *300;
+                        })
+                        .text(function(d) {
+                            return d;
+                        })
+                        .attr("x", function(d, i) {
+                            return xScale(i) + xScale.rangeBand()/2;
+                        })
+                        .attr("y", function(d) {
+                            return h - yScale(d) +14;
+                        });
+
+                    // Exit
+                    bars.exit()
+                        .transition()
+                        .duration(500)
+                        .attr("x", w)
+                        .remove();
+                });
+
+            // Update Data
+
+            d3.select("#update")
                 .on("click", function() {
                     var numValues = dataset.length;
                     dataset = [];
@@ -174,7 +321,7 @@
                     svg.selectAll("rect")
                         .data(dataset)
                         .transition()   // add an awesome transition, default = cubic
-                        .duration(2000) // motion duration
+                        .duration(1000) // motion duration
                         .ease("cubic") // motion style
                         .delay(function(d, i) {
                             return i *300;
@@ -193,7 +340,7 @@
                     svg.selectAll("text")
                         .data(dataset)
                         .transition()
-                        .duration(2000) // motion duration
+                        .duration(1000) // motion duration
                         .ease("cubic") // motion style
                         .delay(function(d, i) {
                             return i *300;
@@ -210,7 +357,10 @@
                 });
         </script>
 
-        <h2>Click this text to update the scatter plot</h2>
+        <h1>Scatter Plot</h2>
+        <p>
+            <div id="updateScatter">Update data<div>
+        </p>
 
         <script type="text/javascript">
 
@@ -327,9 +477,14 @@
                 .attr("transform", "translate(" + padding + ", 0)")
                 .call(yAxis);
 
+
+
+
+
+
             // Update data
 
-            d3.select("h2")
+            d3.select("#updateScatter")
                 .on("click", function() {
                     var numDataPoints = dataset2.length;
                     var maxRange = Math.random() * 1000;
