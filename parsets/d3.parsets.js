@@ -589,7 +589,7 @@
       var t = this.textContent = text(d, i),
           w = width(d, i);
       if (this.getComputedTextLength() < w) return t;
-      this.textContent = "…" + t;
+      this.textContent = "..." + t;
       var lo = 0,
           hi = t.length + 1,
           x;
@@ -598,7 +598,7 @@
         if ((x = this.getSubStringLength(0, mid)) < w) lo = mid + 1;
         else hi = mid;
       }
-      return lo > 1 ? t.substr(0, lo - 2) + "…" : "";
+      return lo > 1 ? t.substr(0, lo - 5) + "..." : "";
     };
   }
 
