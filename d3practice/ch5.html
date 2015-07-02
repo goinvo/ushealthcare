@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- learning how to program -->
+
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.js"></script>
+    </head>
+    <body>
+         <script type="text/javascript">
+            d3.select("body").append("p").text("TITLE");
+
+            var datatset
+            d3.csv("goals.csv",function(error, name_for_my_data){
+                // check to see if the data loaded successfully
+                if(error){
+                    console.log(error);
+                }
+                else {
+                    console.log(name_for_my_data);
+                }
+                // assign the data to a global variable
+                dataset = name_for_my_data;
+                /*d3.select("body").selectAll("p")
+                    .data(dataset)
+                    .enter()
+                    .append("p")
+                    .text(function(d) {return d;})
+                    .style("color","red");
+                    */
+            });
+
+            // do some d3 stuff
+            var dataset = [ 5, 10, 15, 20, 25 ];
+            d3.select("body").selectAll("p")
+                .data(dataset)
+                .enter()
+                .append("p")
+                .text(function(d) {return "I can count up to " + d;})
+                .style("color", function(d){
+                    if (d>15){
+                        return "red";
+                    } else {
+                        return "black";
+                    }
+                });
+
+
+        </script>
+        <style>
+
+            /* styling the svgs */
+            .pumpkin {
+                fill:yellow;
+                stroke:red;
+                stroke-width: 5;
+            }
+        </style>
+        <h1>Test</h1>
+
+        <!-- making some svgs -->
+        <svg width="500" height="500">
+            <circle cx="200" cy="200" r="50" class="pumpkin"/>
+            <rect x="200" y="200" width="25" height="25" stroke="orange" fill="blue" stroke-wdith="8" opacity=".4"/>
+            <ellipse cx="400" cy="400" rx="150" ry="300" fill="rgba(255,0,0,.3)" stroke="rgba(200,1,1,.6)" stroke-width="10"/>
+        </svg>
+    </body>
+</html>
