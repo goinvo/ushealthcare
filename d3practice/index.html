@@ -64,10 +64,12 @@
 
 
          <script type="text/javascript">
-
-            var w = 600;
-            var h = 500;
+            var windowW = window.innerWidth;
+            var windowH = window.innerHeight;
+            var w = windowW - 25;
+            var h = windowH - 25;
             var barPadding = 1;
+
 
             /*// bar graph using randomly generated data and div
             var dataset = [];
@@ -126,12 +128,41 @@
                 .domain([0, d3.max(dataset)])
                 .range([0, h]);
 
+
             var svg = d3.select("body")
                 .append("svg")
                 .attr("width", w)
                 .attr("height", h)
                 .attr("left-margin", 1)
                 .attr("class", "bar_chart");
+
+            // Making it Responsive
+            function responsivefy(svg) {
+                // get container + svg aspect ratio
+                var container = d3.select(svg.node().parentNode),
+                    width = parseInt(svg.style("width")),
+                    height = parseInt(svg.style("height")),
+                    aspect = width / height;
+
+                // add viewBox and preserveAspectRatio properties,
+                // and call resize so that svg resizes on inital page load
+                svg.attr("viewBox", "0 0 " + width + " " + height)
+                    .attr("perserveAspectRatio", "xMinYMid")
+                    .call(resize);
+
+                // to register multiple listeners for same event type, 
+                // you need to add namespace, i.e., 'click.foo'
+                // necessary if you call invoke this function for multiple svgs
+                // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+                d3.select(window).on("resize." + container.attr("id"), resize);
+
+                // get width of container and resize svg to fit it
+                function resize() {
+                    var targetWidth = parseInt(container.style("width"));
+                    svg.attr("width", targetWidth);
+                    svg.attr("height", Math.round(targetWidth / aspect));
+                }
+            }
 
             svg.selectAll("rect")
                 .data(dataset)
@@ -537,6 +568,7 @@
                         .duration(1000)
                         .call(yAxis);
                 });
+
                 
 
 
