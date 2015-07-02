@@ -251,6 +251,7 @@ d3.sankey = function() {
 
     function ascendingDepth(a, b) {
       return a.y - b.y;
+      //return b.y - a.y;
     }
   }
 
@@ -281,7 +282,8 @@ d3.sankey = function() {
   }
 
   function center(node) {
-    return node.y + node.dy / 2;
+    //return node.y + node.dy / 2;
+    return 0;
   }
 
   function value(link) {

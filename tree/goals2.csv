@@ -1,0 +1,63 @@
+name,parent,value
+US Healthcare,null,
+Universal Access,US Healthcare,15
+Near Perfect Quality,US Healthcare,14
+Much Better Prices,US Healthcare,12
+Create Single Payer System,Universal Access,5
+Everyone Gets Covered,Create Single Payer System,5
+Better Costs,Everyone Gets Covered,1.6
+More Equitable,Everyone Gets Covered,1.6
+Increased Preventative Medicine,Everyone Gets Covered,1.6
+Give Patients Their Data,Universal Access,4
+Create Health Data Standard,Universal Access,3
+Enable On-Demand Care,Universal Access,2
+Train More Primary Care Workers,Universal Access,1
+Patients Can Take Charge of Their Own Health,Give Patients Their Data,4
+More Equitable,Patients Can Take Charge of Their Own Health,2
+More Health Conscious People,Patients Can Take Charge of Their Own Health,2
+Self Care,Enable On-Demand Care,2
+Better Costs,Self Care,1
+Increased Preventative Medicine,Self Care,1
+Caregivers Spend More Time with Patients,Train More Primary Care Workers,1
+Better Care,Caregivers Spend More Time with Patients,0.5
+More Equitable,Caregivers Spend More Time with Patients,0.5
+Improve Interoperability,Create Health Data Standard,1.5
+People Shop for Quality and Cost ,Create Health Data Standard,1.5
+Better Care,Improve Interoperability,0.375
+Fewer Unnecessary Tests,Improve Interoperability,0.375
+Reduced Errors,Improve Interoperability,0.375
+Increased Efficiency,Improve Interoperability,0.3
+Better Costs,People Shop for Quality and Cost,3.25
+Better Care,People Shop for Quality and Cost,3.25
+Individualize Medicine,Near Perfect Quality,5
+Coordinate Care,Near Perfect Quality,4
+Destigmatize Death,Near Perfect Quality,3
+Improve Doctor Training,Near Perfect Quality,2
+People Value Quality of Life,Destigmatize Death,3
+Tailored Treatment Plans,Individualize Medicine,5
+Fewer Unnecessary Tests,Tailored Treatment Plans,2.5
+Better Care,Tailored Treatment Plans,2.5
+Clinicians Communicate Better with Patients ,Improve Doctor Training,2
+Fewer Unnecessary Tests,Clinicians Communicate Better with Patients,1.5
+Fewer Hospital Visits,Clinicians Communicate Better with Patients,1.5
+Better Care,Clinicians Communicate Better with Patients,1.5
+Reduced Errors,Clinicians Communicate Better with Patients,1.5
+Clinicians Communicate Better with Patients,Coordinate Care,4
+Make Prices Transparent,Much Better Prices,5
+Incentivize Outcomes,Much Better Prices,4
+Reform Malpractice Laws,Much Better Prices,3
+People Shop for Quality and Cost,Make Prices Transparent,5
+Better Care,People Value Quality of Life,3
+Fees for Outcomes Instead of Fees for Services,Incentivize Outcomes,4
+Better Costs,Fees for Outcomes Instead of Fees for Services,1.3
+Fewer Unnecessary Tests,Fees for Outcomes Instead of Fees for Services,1.3
+Increased Efficiency,Fees for Outcomes Instead of Fees for Services,1.3
+Clinicians Don't Have to Cover Their Butts,Reform Malpractice Laws,3
+Better Costs,Clinicians Don't Have to Cover Their Butts,1.5
+Fewer Unnecessary Tests,Clinicians Don't Have to Cover Their Butts,1.5
+Better Costs,People Shop for Quality and Cost ,
+Better Care,People Shop for Quality and Cost ,
+Fewer Unnecessary Tests,Clinicians Communicate Better with Patients ,
+Fewer Hospital Visits,Clinicians Communicate Better with Patients ,
+Better Care,Clinicians Communicate Better with Patients ,
+Reduced Errors,Clinicians Communicate Better with Patients ,

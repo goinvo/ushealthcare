@@ -1,13 +1,17 @@
 <html>
 	<head>
+		<title>Tree Vis</title>
 		<style>
 		.node circle {
+			cursor: pointer;
 			fill: #ffffff;
 			stroke: red;
 			stroke-width: 1px;
 		}
 
-		.node text { font: 12px sans-serif;}
+		.node text { 
+			pointer-events:none;
+			font: 12px sans-serif;}
 
 		.link {fill:none;
 			stroke: #ccc;
@@ -40,6 +44,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+/*
 var treeData = [
   {
     "name": "Saving Healthcare in the US",
@@ -323,13 +328,48 @@ var treeData = [
     ]
   }
 ];
+*/
 
+
+// load the external data
+d3.csv("goals2.csv", function(error, data) {
+
+// *********** Convert flat data into a nice tree ***************
+// create a name: node map
+var dataMap = data.reduce(function(map, node) {
+	map[node.name] = node;
+	return map;
+}, {});
+
+// create the tree array
+var treeData = [];
+data.forEach(function(node) {
+	// add to parent
+	var parent = dataMap[node.parent];
+	if (parent) {
+		// create child array if it doesn't exist
+		(parent.children || (parent.children = []))
+			// add node to child array
+			.push(node);
+	} else {
+		// parent is null or missing
+		treeData.push(node);
+	}
+});
+
+  root = treeData[0];
+  root.x0 = height / 2;
+  root.y0 = 0;
+  update(root);
+});
+
+/*
 root = treeData[0];
 root.x0 = height / 2;
 root.y0 = 0;
   
 update(root);
-
+*/
 d3.select(self.frameElement).style("height", "500px");
 
 function update(source) {
@@ -363,9 +403,9 @@ function update(source) {
 	  .style("fill-opacity", 1e-6);
 	  */
 	nodeEnter.append("text")
-	  .attr("y", function(d){return d.children || d._children ? -15 : 0; })
+	  .attr("y", function(d){return d.children || d._children ? -8 : 0; })
 	  .attr("x", function(d){return d.children || d._children ? 0 : 13; })
-	  .attr("dy", ".35em")
+	  .attr("dy", ".20em")
 	  .attr("text-anchor", function(d){return d.children || d._children ? "middle" : "start"; })
 	  .text(function(d) {return d.name; })
 	  .style("fill-opacity", 1);
@@ -376,7 +416,7 @@ function update(source) {
 	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-	  .attr("r", 5)
+	  .attr("r", 3)
 	  .style("fill", function(d) { return d._children ? "lightcoral" : "#fff"; });
 
   nodeUpdate.select("text")
