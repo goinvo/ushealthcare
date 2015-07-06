@@ -654,7 +654,7 @@
       if (d.name) path.unshift(d.name);
       d = d.parent;
     }
-    return path.join(" → ") + "<br>" + comma(count) + " (" + percent(count / d.count) + ")";
+    return path.join("<br>") + "<br>" + comma(count) + " (" + percent(count / d.count) + ")";
   }
 
   function defaultCategoryTooltip(d) {
