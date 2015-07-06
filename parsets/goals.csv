@@ -1,36 +1,1 @@
-Category,Action,Behavior,Result
-Universal Access,Create Single Payer System,Everyone Gets Covered,Better Costs
-Universal Access,Create Single Payer System,Everyone Gets Covered,More Equitable
-Universal Access,Create Single Payer System,Everyone Gets Covered,Increased Preventative Medicine
-Universal Access,Give Patients Their Data,Self Care,Better Costs
-Universal Access,Give Patients Their Data,Self Care,Increased Preventative Medicine
-Universal Access,Give Patients Their Data,Patients Can Take Charge of Their Own Health,More Equitable
-Universal Access,Give Patients Their Data,Patients Can Take Charge of Their Own Health,More Health Conscious People
-Universal Access,Enable On-Demand Care,Self Care,Better Costs
-Universal Access,Enable On-Demand Care,Self Care,Increased Preventative Medicine
-Universal Access,Train More Primary Care Workers,Primary Caregivers Spend More Time with Patients,Better Care
-Universal Access,Train More Primary Care Workers,Primary Caregivers Spend More Time with Patients,More Equitable
-Universal Access,Create Health Data Standard,Improve Interoperability,Better Care
-Universal Access,Create Health Data Standard,Improve Interoperability,Fewer Unnecessary Tests
-Universal Access,Create Health Data Standard,Improve Interoperability,Reduced Errors
-Universal Access,Create Health Data Standard,Improve Interoperability,Increased Efficiency
-Universal Access,Create Health Data Standard,People Shop for Quality and Cost,Better Costs
-Universal Access,Create Health Data Standard,People Shop for Quality and Cost,Better Care
-Near Perfect Quality,Destigmatize Death,People Value Quality of Life,Better Care
-Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Fewer Unnecessary Tests
-Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Fewer Hospital Visits
-Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Better Care
-Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Reduced Errors
-Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Fewer Unnecessary Tests
-Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Fewer Hospital Visits
-Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Better Care
-Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Reduced Errors
-Near Perfect Quality,Individuzalize Medicine,Tailored Treatment Plans,Fewer Unnecessary Tests
-Near Perfect Quality,Individuzalize Medicine,Tailored Treatment Plans,Better Care
-Much Better Prices,Make Prices Transparent,People Shop for Quality and Cost,Better Costs
-Much Better Prices,Make Prices Transparent,People Shop for Quality and Cost,Better Care
-Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Better Costs
-Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Fewer Unnecessary Tests
-Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Increased Efficiency
-Much Better Prices,Reform Malpractice Laws,Clinicians Don't Have to Cover Their Butts,Better Costs
-Much Better Prices,Reform Malpractice Laws,Clinicians Don't Have to Cover Their Butts,Fewer Unnecessary Tests
+Category,Action,Behavior,Result,NumberUniversal Access,Create Single Payer System,Everyone Gets Covered,Better Costs,6Universal Access,Create Single Payer System,Everyone Gets Covered,More Equitable,12Universal Access,Create Single Payer System,Everyone Gets Covered,Increased Preventative Medicine,8Universal Access,Give Patients Their Data,Self Care,Better Costs,13Universal Access,Give Patients Their Data,Self Care,Increased Preventative Medicine,7Universal Access,Give Patients Their Data,Patients Can Take Charge of Their Own Health,More Equitable,9Universal Access,Give Patients Their Data,Patients Can Take Charge of Their Own Health,More Health Conscious People,15Universal Access,Enable On-Demand Care,Self Care,Better Costs,13Universal Access,Enable On-Demand Care,Self Care,Increased Preventative Medicine,10Universal Access,Train More Primary Care Workers,Primary Caregivers Spend More Time with Patients,Better Care,11Universal Access,Train More Primary Care Workers,Primary Caregivers Spend More Time with Patients,More Equitable,10Universal Access,Create Health Data Standard,Improve Interoperability,Better Care,11Universal Access,Create Health Data Standard,Improve Interoperability,Fewer Unnecessary Tests,8Universal Access,Create Health Data Standard,Improve Interoperability,Reduced Errors,12Universal Access,Create Health Data Standard,Improve Interoperability,Increased Efficiency,11Universal Access,Create Health Data Standard,People Shop for Quality and Cost,Better Costs,6Universal Access,Create Health Data Standard,People Shop for Quality and Cost,Better Care,15Near Perfect Quality,Destigmatize Death,People Value Quality of Life,Better Care,15Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Fewer Unnecessary Tests,10Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Fewer Hospital Visits,15Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Better Care,6Near Perfect Quality,Improve Doctor Training,Clinicians Communicate Better with Patients,Reduced Errors,14Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Fewer Unnecessary Tests,9Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Fewer Hospital Visits,12Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Better Care,14Near Perfect Quality,Coordinate Care,Clinicians Communicate Better with Patients,Reduced Errors,9Near Perfect Quality,Individuzalize Medicine,Tailored Treatment Plans,Fewer Unnecessary Tests,9Near Perfect Quality,Individuzalize Medicine,Tailored Treatment Plans,Better Care,6Much Better Prices,Make Prices Transparent,People Shop for Quality and Cost,Better Costs,5Much Better Prices,Make Prices Transparent,People Shop for Quality and Cost,Better Care,12Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Better Costs,12Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Fewer Unnecessary Tests,6Much Better Prices,Incentivize Outcomes,Fees for Outcomes Instead of Fees for Services,Increased Efficiency,15Much Better Prices,Reform Malpractice Laws,Clinicians Don't Have to Cover Their Butts,Better Costs,14Much Better Prices,Reform Malpractice Laws,Clinicians Don't Have to Cover Their Butts,Fewer Unnecessary Tests,10

@@ -119,7 +119,7 @@
           textEnter.append("tspan")
               .attr("class", "name")
               .text(dimensionFormatName);
-          textEnter.append("tspan")
+          /*textEnter.append("tspan")           // sort data alphabetically or numerically
               .attr("class", "sort alpha")
               .attr("dx", "2em")
               .text("alpha »")
@@ -128,7 +128,7 @@
               .attr("class", "sort size")
               .attr("dx", "2em")
               .text("size »")
-              .on("mousedown.parsets", cancelEvent);
+              .on("mousedown.parsets", cancelEvent); */
           dimension
               .call(d3.behavior.drag()
                 .origin(identity)
@@ -510,6 +510,8 @@
           child.path = d.path + "\0" + k;
           var target = child.target || {node: c, dimension: dimension};
           target.x = c.in.dx;
+          // CONTROLS WEIGHT OF THE COLUMNS OF DATA
+          //console.log(child.count, child.name, child);
           target.dx = child.count / total * (width - spacing);
           c.in.dx += target.dx;
           var source = child.source || {node: p, dimension: dimensions[depth - 1]};

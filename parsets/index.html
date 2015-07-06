@@ -27,13 +27,13 @@
 			h1 {
 			    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 			    text-align: center;
-			    font-size: 100px;
+			    font-size: 60px;
 			    color: #004363;
 		    }
 			#dimToggle {
 				cursor: pointer;
 			    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-			    font-size: 100px;
+			    font-size: 30px;
 			    text-align: center;
 			    color: #004363;
 			};
@@ -49,7 +49,7 @@
 			var toggle = 0;
 			d3.select("#dimToggle")
                 .on("click", function() {
-                	if (toggle == 0) {
+                	if (toggle == 0) {		// if statement is used to decide which view to present, "result" first or "category" first
        	                d3.select("svg")
        	                	.remove();
        	                var chart = d3.parsets()
