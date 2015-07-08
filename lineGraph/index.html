@@ -34,11 +34,7 @@
 
             <div class="center">
                 <h4>Education</h4>
-<<<<<<< HEAD
-                <img src = "education_icon.png" style = "width: 30%"></img>
-=======
                 <figure class="buystrip-block-icon edu-icon"></figure>
->>>>>>> origin/master
                 <p>
                     According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.
                     <a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a>
@@ -96,7 +92,59 @@
         </div>
 
 
-        <iframe src="//data.oecd.org/chart/4kdb" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"><a href="//data.oecd.org/chart/4kdb" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+
+
+        <h3>What's Wrong 2.0</h3>
+
+
+
+
+        <div id="Tabs">
+            <ul>
+                <li id="li_tab1" onclick="tab('tab1')" ><a>Cost</a></li>
+                <li id="li_tab2" onclick="tab('tab2')"><a>Quality</a></li>
+                <li id="li_tab3" onclick="tab('tab3')"><a>Access</a></li>
+            </ul>
+            <div id="Content_Area">
+                <div id="tab1">
+                    <p id="tab_p">
+                        The U.S. government invests $50.5 B in medical research, accounting for 49% of public research funding throughout the world.
+                    </p>
+                    <div id="tab_graph">
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" position="center" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="middle"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                    </div>
+                </div>
+                <div id="tab2" style="display: none;"> <!-- We set its display as none because we don’t want to make this
+tab visible by default. The only visible/active tab should be Tab 1 until the visitor clicks on Tab 2. -->
+                    <img src="http://www.commonwealthfund.org/~/media/images/publications/fund-report/2010/jun/mm2010l.gif" alt="Commonewealth Fund" style="width:280px;height:228px;">
+                    <p id="tab_p">
+                        According to US News and World Reports, the US has 8 of the top 10 medical schools in the world. <a href="http://www.commonwealthfund.org/publications/press-releases/2010/jun/us-ranks-last-among-seven-countries" target="_blank">link</a>
+                    </p>
+                </div>
+                <div id="tab3" style="display: none;">
+                    <img src="http://www.usnews.com/dims4/USNEWS/73df8b3/2147483647/resize/652x/quality/85/?url=%2Fcmsmedia%2F6c%2Ff6%2Fe820c3c74cc4be5baf4d46cc27f8%2F140710gallup1-graphic.03.03%20PM.png" alt="Number of Uninsured Americans" style="width:280px;height:228px;" align="right">
+                    <p id="tab_p">
+                        We have more MRI, CT, and PET machines per capita than any other country.<a href="http://www.usnews.com/news/blogs/data-mine/2014/07/10/percentage-of-uninsured-americans-now-lowest-on-record" target="_blank">link</a>
+                    </p>
+                </div>
+            </div> <!-- End of Content_Area Div -->
+        </div> <!-- End of Tabs Div -->
+
+        <script type="text/javascript">
+            function tab(tab) {
+            document.getElementById('tab1').style.display = 'none';
+            document.getElementById('tab2').style.display = 'none';
+            document.getElementById('tab3').style.display = 'none';
+            document.getElementById('li_tab1').setAttribute("class", "");
+            document.getElementById('li_tab2').setAttribute("class", "");
+            document.getElementById('li_tab3').setAttribute("class", "");
+            document.getElementById(tab).style.display = 'block';
+            document.getElementById('li_'+tab).setAttribute("class", "active");
+        }
+        </script>
+
+
+
 
 
         <p class="vertical_space"></p>
