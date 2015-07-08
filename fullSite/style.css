@@ -132,7 +132,7 @@ ul.tabs li.current{
     margin: auto;
 }
 
-.footer1 {
+.floating-circle {
     position: fixed; 
     bottom: 0;
     left: 0;
@@ -140,7 +140,7 @@ ul.tabs li.current{
     height: 150;
 }
 
-.footer2 {
+.floating-footer {
     position: fixed; 
     bottom: 0;
     left: 0;
@@ -151,6 +151,15 @@ ul.tabs li.current{
     border-top-width: thin;
     border-top-style: solid;
     border-top-color: #FF00FF;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: white;
+    opacity: 1;
 }
 
 
