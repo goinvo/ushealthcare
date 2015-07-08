@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- learning how to program -->
-
         <meta charset="utf-8">
         <script type="text/javascript" src="d3/d3.js"></script>
        
@@ -13,42 +11,93 @@
 
     <body>
         <h1>Saving U.S. Healthcare</h1>
-        
-        <p>
-            <div class="buystrip">
-                <div class="left">
-                    <h4>Research</h4>
-                    <p>
-                        The U.S. government invests $50.5 B in medical research, accounting for 49% of public research funding throughout the world.
-                        <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a>
-                    </p>
-                    
-                    <p>
-                        However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing. 
-                        <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a>
-                    </p>
-                </div>    
-                <div class="column_padding"> | </div>        
-                <div class="center">
-                    <h4>Education</h4>
-                    <p>According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.</p>
-                    <p>However, the U.S. has fewer doctors per capita than most other industrialized nations.</p>
-                </div>                     
-                <div class="column_padding"> | </div>
-                <div class="right">
-                    <h4>Technology</h4>
-                    <p>We have more MRI, CT, and PET machines per capita than any other country.</p>
-                    <p>However, we spend significantly more per capita than any other industrialized country.</p>
-                </div>
+    
+
+        <h3>What's Good(ish)</h3>
+
+        <div class="buystrip">
+            <div class="left">
+                <h4>Research</h4>                
+                <p class="impact">
+                    49%
+                </p>
+                <p>
+                    of public research funding throughout the world comes from the U.S., amounting to $50.5B annually.
+                    <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a>
+                </p>
+                
+                <p>
+                    However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing. 
+                    <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a>
+                </p>
+            </div>    
+
+            <div class="center">
+                <h4>Education</h4>
+                <figure class="buystrip-block-icon edu-icon"></figure>
+                <p>
+                    According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.
+                    <a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a>
+                </p>
+                <p>
+                    However, the U.S. has fewer doctors per capita than most other industrialized nations.
+                <a href="https://data.oecd.org/healthres/doctors.html" target="_blank">link</a>
+            </p>
+            </div>                     
+
+            <div class="right">
+                <h4>Technology</h4>
+                <figure class="buystrip-block-icon edu-icon"></figure>
+                <p>
+                    We have more MRI, CT, and PET machines per capita than any other country.
+                    <a href="http://stats.oecd.org/#" target="_blank">link</a>
+                </p>
+                <p>
+                    However, we spend significantly more per capita than any other industrialized country.
+                    <a href="?" target="_blank">link</a>
+                </p>
             </div>
+        </div>        
 
-            <p class="vertical_space"></p>
-            <p class="vertical_space"></p>
+        <h3>What's Wrong</h3>
 
-            <div id="update">Update data</div>
-            <div id="add">Add column</div>
-            <div id="delete">Delete column</div>
-        </p>
+        <div class="buystrip">
+            <div class="left">
+                <h4>Cost</h4>
+
+                <p>
+                    <img src="http://big.assets.huffingtonpost.com/2013_09_HealthCareCosts3.png" alt="Healthcare Costs" style="width: 280px;height:228px;">
+                    The U.S. government invests $50.5 B in medical research, accounting for 49% of public research funding throughout the world.
+                    <a href="http://www.huffingtonpost.com/2013/10/03/health-care-costs-_n_3998425.html" target="_blank">link</a>
+                </p>
+            </div>    
+
+            <div class="center">
+                <h4>Quality</h4>
+                <p>
+                    <img src="http://www.commonwealthfund.org/~/media/images/publications/fund-report/2010/jun/mm2010l.gif" alt="Commonewealth Fund" style="width:280px;height:228px;">
+                    According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.
+                    <a href="http://www.commonwealthfund.org/publications/press-releases/2010/jun/us-ranks-last-among-seven-countries" target="_blank">link</a>
+                </p>
+            </div>                     
+
+            <div class="right">
+                <h4>Access</h4>
+                <p>
+                    <img src="http://www.usnews.com/dims4/USNEWS/73df8b3/2147483647/resize/652x/quality/85/?url=%2Fcmsmedia%2F6c%2Ff6%2Fe820c3c74cc4be5baf4d46cc27f8%2F140710gallup1-graphic.03.03%20PM.png" alt="Number of Uninsured Americans" style="width:280px;height:228px;">
+                    We have more MRI, CT, and PET machines per capita than any other country.
+                    <a href="http://www.usnews.com/news/blogs/data-mine/2014/07/10/percentage-of-uninsured-americans-now-lowest-on-record" target="_blank">link</a>
+                </p>
+            </div>
+        </div>
+
+        <p class="vertical_space"></p>
+        <p class="vertical_space"></p>
+        <h3>How We Can Improve</h3>
+
+        <div id="update">Update data</div>
+        <div id="add">Add column</div>
+        <div id="delete">Delete column</div>
 
 
          <script type="text/javascript">
