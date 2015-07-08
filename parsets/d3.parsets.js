@@ -119,7 +119,7 @@
           textEnter.append("tspan")
               .attr("class", "name")
               .text(dimensionFormatName);
-          textEnter.append("tspan")
+          /*textEnter.append("tspan")           // sort data alphabetically or numerically
               .attr("class", "sort alpha")
               .attr("dx", "2em")
               .text("alpha »")
@@ -128,7 +128,7 @@
               .attr("class", "sort size")
               .attr("dx", "2em")
               .text("size »")
-              .on("mousedown.parsets", cancelEvent);
+              .on("mousedown.parsets", cancelEvent); */
           dimension
               .call(d3.behavior.drag()
                 .origin(identity)
@@ -510,6 +510,8 @@
           child.path = d.path + "\0" + k;
           var target = child.target || {node: c, dimension: dimension};
           target.x = c.in.dx;
+          // CONTROLS WEIGHT OF THE COLUMNS OF DATA
+          //console.log(child.count, child.name, child);
           target.dx = child.count / total * (width - spacing);
           c.in.dx += target.dx;
           var source = child.source || {node: p, dimension: dimensions[depth - 1]};
@@ -589,7 +591,7 @@
       var t = this.textContent = text(d, i),
           w = width(d, i);
       if (this.getComputedTextLength() < w) return t;
-      this.textContent = "…" + t;
+      this.textContent = "..." + t;
       var lo = 0,
           hi = t.length + 1,
           x;
@@ -598,7 +600,7 @@
         if ((x = this.getSubStringLength(0, mid)) < w) lo = mid + 1;
         else hi = mid;
       }
-      return lo > 1 ? t.substr(0, lo - 2) + "…" : "";
+      return lo > 1 ? t.substr(0, lo - 5) + "..." : "";
     };
   }
 
@@ -654,7 +656,7 @@
       if (d.name) path.unshift(d.name);
       d = d.parent;
     }
-    return path.join(" → ") + "<br>" + comma(count) + " (" + percent(count / d.count) + ")";
+    return path.join("<br>") + "<br>" + comma(count) + " (" + percent(count / d.count) + ")";
   }
 
   function defaultCategoryTooltip(d) {

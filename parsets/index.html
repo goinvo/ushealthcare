@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<title>U.S. Healthcare</title>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 		<script src="d3.parsets.js" type="text/javascript"></script>
@@ -7,7 +8,10 @@
 		<script>
 			$(document).ready(function(e){
 				var chart = d3.parsets()
-		      		.dimensions(["Category", "Action", "Behavior", "Result"]).width(1400);
+		      		.dimensions(["Category", "Action", "Behavior", "Result"]).width(1400)
+		      		.spacing(400)	// spacing between columns
+		      		.tension(.3)    // tension of the columns
+		      		.duration(1000);// duration of transition
 
 				var vis = d3.select("#vis").append("svg")
 				    .attr("width", chart.width())
@@ -18,8 +22,69 @@
 				});
 			})
 		</script>
+		<style>
+
+			h1 {
+			    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+			    text-align: center;
+			    font-size: 60px;
+			    color: #004363;
+		    }
+			#dimToggle {
+				cursor: pointer;
+			    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+			    font-size: 30px;
+			    text-align: center;
+			    color: #004363;
+			};
+		</style>
 	</head>
 	<body>
+		<h1>U.S. Healthcare</h1>
 		<div id="vis"></div>
+		<p1>
+			<div id="dimToggle">switch view</div>
+		</p1>
+		<script>
+			var toggle = 0;
+			d3.select("#dimToggle")
+                .on("click", function() {
+                	if (toggle == 0) {		// if statement is used to decide which view to present, "result" first or "category" first
+       	                d3.select("svg")
+       	                	.remove();
+       	                var chart = d3.parsets()
+			      		.dimensions(["Result", "Behavior", "Action", "Category"]).width(1400)
+			      		.spacing(400)	// spacing between columns
+			      		.tension(.3)    // tension of the columns
+			      		.duration(1000);// duration of transition
+
+						var vis = d3.select("#vis").append("svg")
+						    .attr("width", chart.width())
+						    .attr("height", chart.height());
+
+						d3.csv("goals.csv", function(error, csv) {
+							vis.datum(csv).call(chart);         		
+	                	});
+	                	toggle = 1;
+					} else if (toggle == 1) {
+       	                d3.select("svg")
+       	                	.remove();
+                        var chart = d3.parsets()
+			      		.dimensions(["Category", "Action", "Behavior", "Result"]).width(1400)
+			      		.spacing(400)	// spacing between columns
+			      		.tension(.3)    // tension of the columns
+			      		.duration(1000);// duration of transition
+
+						var vis = d3.select("#vis").append("svg")
+						    .attr("width", chart.width())
+						    .attr("height", chart.height());
+
+						d3.csv("goals.csv", function(error, csv) {
+							vis.datum(csv).call(chart);         		
+	                	});
+						toggle = 0;
+					}
+				});
+		</script>
 	</body>
 </html>
