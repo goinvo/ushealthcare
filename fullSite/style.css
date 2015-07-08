@@ -124,67 +124,65 @@ h3 {
 
 /* TABS */
 
-#Tabs ul {
-    padding: 0px;
+.container{
+    width: 800px;
+    margin: 0 auto;
+}
+
+ul.tabs{
     margin: 0px;
-    margin-left: 10px;
-    list-style-type: none;
+    padding: 0px;
+    list-style: none;
 }
-
-#Tabs ul li {
+ul.tabs li{
+    background: none;
+    color: #222;
     display: inline-block;
-    clear: none;
-    float: left;
-    height: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
 }
 
-#Tabs ul li a {
-    position: relative;
-    margin-top: 16px;
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+
+.tab-content{
+    display: none;
+    background: #ededed;
+    padding: 15px;
+}
+
+.tab-content.current{
+    display: inherit;
+}
+
+
+/* FOOTER */
+.circle {
     display: block;
-    margin-left: 6px;
-    line-height: 24px;
-    padding-left: 10px;
-    background: #f6f6f6;
-    z-index: 9999;
-    border: 1px solid #ccc;
-    border-bottom: 0px;
-
-    /* The following four lines are to make the top left and top right corners of each tab rounded. */
-    -moz-border-radius-topleft: 4px;
-    border-top-left-radius: 4px;
-    -moz-border-radius-topright: 4px;
-    border-top-right-radius: 4px;
-    /* end of rounded borders */
-
-    width: 130px;
-    color: #000000;
-    text-decoration: none;
-    font-weight: bold;
+    margin: auto;
 }
 
-#Tabs ul li a:hover {
-text-decoration: underline; // a very simple effect when hovering the mouse on tab
+.footer1 {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150;
 }
 
-#Tabs #Content_Area { // this is the css class for the content displayed in each tab
-    padding: 0 15px;
-    clear: both;
-    overflow: hidden;
-    line-height: 19px;
-    position: relative;
-    top: 20px;
-    z-index: 5;
-    height: 800px;
-    overflow: hidden;
-    background-color: #e3e3e3; 
-}
-#tab_p {
-    padding: 20px;
-    text-align: left;
+.footer2 {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: white;
+    opacity: .7;
+    border-top-width: thin;
+    border-top-style: solid;
+    border-top-color: #FF00FF;
 }
 
-#tab_graph {
-    position: center;
-}
 
