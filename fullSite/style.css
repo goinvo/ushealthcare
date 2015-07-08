@@ -32,6 +32,32 @@ h3 {
     text-align: center;
 }
 
+
+/* TABLE */
+table {
+    width: 80%;
+    background-color: #e3e3e3;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+th {
+    width: 30%;
+    margin: 0 auto;
+}
+
+td {
+    text-align: center;
+    vertical-align: top;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/* D3 Stuff */
 .bar_chart {
     background-color: #e3e3e3;
 }
@@ -62,65 +88,7 @@ h3 {
 }
 
 
-.buystrip {
-    padding-top: 0px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    border-top: 10px solid #e3e3e3;
-    border-bottom: 10px solid #e3e3e3;
-    max-width: 980px;
-    min-width: 698px;
-    margin-left: auto;
-    margin-right: auto;
-    min-height: 600px;
-    background-color: #e3e3e3;
-}
 
-.left {
-    float: left;
-    width: 30%;
-    overflow: hidden;
-    padding-left: 1%;
-}
-
-
-.center {
-    float: left;
-    width: 30%;
-    overflow: hidden;
-    padding-right: 4%;
-    padding-left: 4%;
-}
-.right {
-    float: left;
-    width: 30%;
-    overflow: hidden;
-    padding-right: 1%;
-}
-
-.impact {
-    font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-    font-size: 60px;
-    text-align: center;
-    font-style: normal;
-    font-variant: normal;
-    color: #FF6600;
-}
-
-.edu-icon {
-    background-repeat: no-repeat;
-    background-image: url("http://images.apple.com/v/watch/e/images/buystrip_online_large.png");
-    background-size: 44px 44px;
-    height: 44px;
-    width: 44px
-}
-
-.buystrip-block-icon {
-    margin-left: auto;
-    margin-right: auto
-}
 
 /* TABS */
 
