@@ -122,6 +122,9 @@ h3 {
     margin-right: auto
 }
 
+
+
+
 /* TABS */
 
 #Tabs ul {
@@ -187,4 +190,3 @@ text-decoration: underline; // a very simple effect when hovering the mouse on t
 #tab_graph {
     position: center;
 }
-

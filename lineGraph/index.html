@@ -15,45 +15,14 @@
 
         <h3>What's Good(ish)</h3>
 
-        <table width = "90%" align = "center" cellspacing = "10px" bgcolor = "#e3e3e3">
-            <tr align = "center">
-            <th width = "30%">Research</th>
-            <th width = "30%">Education</th>
-            <th width = "30%">Technology</th>
-            </tr>
-            <tr align = "center" valign: "center">
-                <td><img src = "research_icon-03.png" style = "width: 50%"></img></td>
-                <td><img src = "education_icon-02.png" style = "width: 50%"></img></td>
-                <td><img src = "tech_icon-03.png" style = "width: 50%"></img></td></tr>
-            <tr align = "center" valign = "top">
-                <td><p>49% of public research funding throughout the world comes from the U.S., amounting to $50.5B annually.</p></td>
-                <td><p>According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.</p></td>
-                <td><p>We have more MRI, CT, and PET machines per capita than any other country.</p></td>
-            </tr>
-            <tr align = "center">
-                <td><a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></td>
-                <td><a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a></td>
-                <td><a href="http://stats.oecd.org/#" target="_blank">link</a></td>
-            </tr>
-            <tr align = "center" valign = "top">
-                <td><p>However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing. </p></td>
-                <td><p>However, the U.S. has fewer doctors per capita than most other industrialized nations.</p></td>
-                <td><p>However, we spend significantly more per capita than any other industrialized country.</p></td>
-            </tr>
-            <tr align = "center">
-                <td><a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></td>
-                <td><a href="https://data.oecd.org/healthres/doctors.html" target="_blank">link</a></td>
-                <td><a href="?" target="_blank">link</a></td>
-            </tr>
-        </table>
-        <p></p>
-
         <div class="buystrip">
             <div class="left">
                 <h4>Research</h4>                
-                <img src = "research_icon-03.png" style = "width: 50%"></img>
+                <p class="impact">
+                    49%
+                </p>
                 <p>
-                    49% of public research funding throughout the world comes from the U.S., amounting to $50.5B annually.
+                    of public research funding throughout the world comes from the U.S., amounting to $50.5B annually.
                     <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a>
                 </p>
                 
@@ -65,13 +34,7 @@
 
             <div class="center">
                 <h4>Education</h4>
-
-<<<<<<< HEAD
-                <img src = "education_icon-02.png" style = "width: 50%"></img>
-
-=======
-                <img src = "education_icon.png" style = "width: 30%"></img>
->>>>>>> origin/master
+                <figure class="buystrip-block-icon edu-icon"></figure>
                 <p>
                     According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.
                     <a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a>
@@ -84,7 +47,7 @@
 
             <div class="right">
                 <h4>Technology</h4>
-                <img src = "tech_icon-03.png" style = "width: 50%"></img>
+                <figure class="buystrip-block-icon edu-icon"></figure>
                 <p>
                     We have more MRI, CT, and PET machines per capita than any other country.
                     <a href="http://stats.oecd.org/#" target="_blank">link</a>
@@ -130,8 +93,11 @@
 
 
 
-        <!-- TABS   -->
+
         <h3>What's Wrong 2.0</h3>
+
+
+
 
         <div id="Tabs">
             <ul>
@@ -176,7 +142,6 @@ tab visible by default. The only visible/active tab should be Tab 1 until the vi
             document.getElementById('li_'+tab).setAttribute("class", "active");
         }
         </script>
-
 
 
 
