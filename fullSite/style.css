@@ -149,6 +149,8 @@ ul.tabs li.current{
 /* SLIDE DOWN */
 #panel1 {
     background-color: #e3e3e3;
+    width: 80%;
+    margin: auto;
 }
 
 #flip1 {
@@ -203,8 +205,8 @@ ul.tabs li.current{
     position: absolute;
     top:0;
     left: 0;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
 
 #p-slide {
@@ -214,7 +216,7 @@ ul.tabs li.current{
 /* STORY */
 #story {
     width: 80%;
-    margin:auto;
+    margin: auto;
 }
 
 
