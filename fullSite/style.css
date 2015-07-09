@@ -145,3 +145,93 @@ ul.tabs li.current{
 }
 
 
+
+/* SLIDE DOWN */
+#panel1 {
+    background-color: #e3e3e3;
+}
+
+#flip1 {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+    background-color: yellow;
+}
+
+#panel2 {
+    background-color: #e3e3e3;
+}
+
+#flip2 {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+    background-color: yellow;
+}
+
+#panel3 {
+    background-color: #e3e3e3;
+}
+
+#flip3 {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+    background-color: yellow;
+}
+
+#panel4 {
+    background-color: #e3e3e3;
+}
+
+#flip4 {
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+    background-color: yellow;
+}
+
+.embed-extra-info {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 35px;
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-extra-info iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+}
+
+#p-slide {
+    display: inline;
+}
+
+/* STORY */
+#story {
+    width: 80%;
+    margin:auto;
+}
+
+
+/* CECILE'S GRAPH */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}

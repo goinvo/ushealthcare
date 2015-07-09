@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8">
         <script type="text/javascript" src="d3/d3.js"></script>
        
@@ -28,6 +29,31 @@
             })
         </script>
 
+        <!-- SLIDE DOWN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script> 
+            $(document).ready(function(){
+                $('#panel1').hide();
+                $('#flip1').click(function(){
+                    $('#panel1').slideToggle('slow');
+                });
+                            
+                $('#panel2').hide();
+                $('#flip2').click(function(){
+                    $('#panel2').slideToggle('slow');
+                });
+                
+                $('#panel3').hide();
+                $('#flip3').click(function(){
+                    $('#panel3').slideToggle('slow');
+                });
+                
+                $('#panel4').hide();
+                $('#flip4').click(function(){
+                    $('#panel4').slideToggle('slow');
+                });
+            });
+        </script>
 
         <title>Saving U.S. Healthcare</title>
 
@@ -35,9 +61,8 @@
 
     <body>
         <h1>Saving U.S. Healthcare</h1>
-    
 
-        <h3>What's Good(ish)</h3>
+        <h3>Previous Successes</h3>
          <table>
             <tr>
             <th>Research</th>
@@ -74,7 +99,7 @@
   
 
         <!-- TABS   -->
-        <h3>What's Wrong</h3>
+        <h3>Biggest Challenges</h3>
 
         <div class="container">
             <ul class="tabs">
@@ -106,24 +131,180 @@
             </div>
         </div>
 
+        <h3>Story</h3>
+
+        <div id="story">
+
+        <p id="p-slide">Two minutes ago, Juhan was quietly sipping juice through in his hospital room. He was flipping through the channels on the grainy television when the remote slipped out of his hand and fell to the floor. The thumb sensor stopped detecting a pulse. One alarm started sounding, then another. A nurse rushed in and called Code Blue, and the crash team descended on Juhan in seconds. The team knew that fewer than 25% of adults are successfully resuscitated.
+        </p><br><br>
+
+        <p id="p-slide">What happened to cause Juhan’s misfortune? His heart stopped beating, to be sure. But at 27, hearts don’t simply stop beating. The saga began years before, when Juhan decided to pay a tax in place of paying for a</p>
+            <div id="flip1">bronze plan</div>
+            <div id="panel1">Let's talk about costs...
+                <div class="embed-extra-info">
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                </div>
+            </div>
+        <p id="p-slide"> on his state’s healthcare exchange. Why pay for something you don’t use? Without health insurance, Juhan stopped seeing his doctor and, as a result, stopped receiving vaccinations. After a particularly nasty bout with influenza, he began noticing symptoms of pneumonia and sought medical attention.
+        </p><br><br>
+
+        <p id="p-slide">Having no primary care doctor, Juhan went to an emergency room at a nearby hospital. He didn’t know it at the time because the information is hard to find, but the hospital across town might have been a more</p>
+            <div id="flip2"> affordable choice</div>
+            <div id="panel2">Let's talk about costs...
+                <div class="embed-extra-info">
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                </div>
+            </div>
+        <p id="p-slide">(http://www.nytimes.com/2013/05/08/business/hospital-billing-varies-wildly-us-data-shows.html). As it happens, the hospital he chose uses a different EHR than his former doctor did, so none of Juhan’s medical information could be transferred. 
+        </p><br><br>
+
+        <p id="p-slide">Even though the symptoms and history clearly pointed to pneumonia, the doctors ordered a half</p>
+            <div id="flip3">dozen unnecessary tests.</div>
+            <div id="panel3">Let's talk about costs...
+                <div class="embed-extra-info">
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                </div>
+            </div>
+        <p id="p-slide">(http://archinte.jamanetwork.com/article.aspx?articleid=1106007 ). Meanwhile, they began to treat Juhan’s infection with amoxicillin. Juhan forgot about his allergy to amoxicillin, something that might have been prevented if his previous doctor had encouraged patients to engage with their own medical information (graphic). While the allergic reaction wasn’t fatal, it certainly didn’t help. Ultimately, lack of early care allowed the pneumonia to cause serious complications during Juhan’s hospital stay, culminating in cardiac arrest.
+        </p><br><br>
+
+        <p id="p-slide">Healthcare in the U.S. is in dire need of a transformation. Without a doubt healthcare is complex and nuanced, but still we lag far behind most industrialized nations. We spend xyz per capita, more than any other nation. Despite this, we have worse outcomes, lower quality, and more limited access. The Patient Protection and Affordable Care Act (Obamacare) was a step in the right direction, but our system has a long way to go. (graphic on care, access, and quality)
+        </p>
+            <div id="flip4">dozen unnecessary tests.</div>
+            <div id="panel4">Let's talk about costs...
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+                <script>
+
+                    var margin = {top: 20, right: 80, bottom: 30, left: 50},
+                        width = 960 - margin.left - margin.right,
+                        height = 500 - margin.top - margin.bottom;
+
+                    var parseDate = d3.time.format("%Y").parse;
+
+                    var x = d3.time.scale()
+                        .range([0, width]);
+
+                    var y = d3.scale.linear()
+                        .range([height, 0]);
+
+                    var color = d3.scale.category10();
+
+                    var xAxis = d3.svg.axis()
+                        .scale(x)
+                        .orient("bottom");
+
+                    var yAxis = d3.svg.axis()
+                        .scale(y)
+                        .orient("left");
+
+                    var line = d3.svg.line()
+                        .interpolate("basis")
+                        .defined(function(d) { return d.gdp != null; })
+                        .x(function(d) { return x(d.date); })
+                        .y(function(d) { return y(d.gdp); });
+
+                    var svg = d3.select("body").append("svg")
+                        .attr("width", width + margin.left + margin.right)
+                        .attr("height", height + margin.top + margin.bottom)
+                      .append("g")
+                        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    d3.csv("fulldata2.csv", function(error, data) {
+                      if (error) throw error;
+
+                      color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+
+                      data.forEach(function(d) {
+                        d.date = parseDate(d.date);
+                      });
+
+                    console.log(data[0]);
+
+                      var countries = color.domain().map(function(name) {
+                        return {
+                          name: name,
+                          values: data.map(function(d) {
+                            return {date: d.date, gdp: +d[name] || null };
+                          })
+                        };
+                      });
+
+                      x.domain(d3.extent(data, function(d) { return d.date; }));
+
+                      y.domain([
+                        d3.min(countries, function(c) { return d3.min(c.values, function(v) { return v.gdp; }); }),
+                        d3.max(countries, function(c) { return d3.max(c.values, function(v) { return v.gdp; }); })
+                      ]);
+
+                      svg.append("g")
+                          .attr("class", "x axis")
+                          .attr("transform", "translate(0," + height + ")")
+                          .call(xAxis);
+
+                      svg.append("g")
+                          .attr("class", "y axis")
+                          .call(yAxis)
+                        .append("text")
+                          .attr("transform", "rotate(-90)")
+                          .attr("y", 6)
+                          .attr("dy", ".71em")
+                          .style("text-anchor", "end")
+                          .text("% GDP Spent on Healthcare");
+
+                      var country = svg.selectAll(".country")
+                          .data(countries)
+                        .enter().append("g")
+                          .attr("class", "country");
+
+                      country.append("path")
+                          .attr("class", "line")
+                          .attr("d", function(d) { return line(d.values); })
+                          .style("stroke", function(d) { return color(d.name); });
+
+                      country.append("text")
+                          .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+                          .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.gdp) + ")"; })
+                          .attr("x", 3)
+                          .attr("dy", ".35em")
+                          .text(function(d) { return d.name; });
+                    });
+
+                </script>
+                </div>
+            </div>
+        <br><br>
+
+        <p id="p-slide">Even the traditional strongholds of medicine in the U.S. are dwindling. The U.S. leads the world in public funding for medical research. In 2011, the U.S. government invested $50.5 billion in medical research, accounting for 49% of public funding for medical research worldwide. But doesn’t paint the full picture. talk about decline of funding...Medical education...Technology
+        </p><br><br>
+
+        <p id="p-slide">Health is a human right, and healthcare is undeniably a public good. But government regulation and changing public perception isn’t the full answer. The patriarchal medical culture needs to change to embrace innovation and engage patients.
+        </p><br><br>
+
+        <p id="p-slide">Everyone has a role in saving U.S. healthcare. Explore our ideas and join the discussion by contributing your own.
+        </p><br><br>
+
+        </div>
+
+
+
+
+
 
         <div class="floating-footer">
                 <p>Check out our awesome viz</p>
         </div>
 
         <div class="floating-circle">
-            <a href="http://www.goinvo.com" target="_blank">
                 <svg class="circle" height="100" width="100">
                     <circle cx="50" cy="50" r="20" stroke="#336699" stroke-opacity=".7" stroke-width="4" fill="#33CCFF"/>
                 </svg>
-            </a>
         </div>
 
         <div class="footer">
                 <p>&copy 2015 Involution Studios</p>
+
+
         </div>
-
-
 
 
 
