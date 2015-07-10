@@ -52,54 +52,62 @@
                 $('#flip4').click(function(){
                     $('#panel4').slideToggle('slow');
                 });
+                
+                $('#panel5').hide();
+                $('#flip5').click(function(){
+                    $('#panel5').slideToggle('slow');
+                });
             });
         </script>
+
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <title>Saving U.S. Healthcare</title>
 
     </head>
 
-    <body>
-        <h1>Saving U.S. Healthcare</h1>
+  <body>
 
-        <h3>Previous Successes</h3>
-         <table>
-            <tr>
-            <th>Research</th>
-            <th>Education</th>
-            <th>Technology</th>
-            </tr>
-            <tr>
-                <td><img src = "research_icon-03.png" style = "width: 50%"></img></td>
-                <td><img src = "education_icon-02.png" style = "width: 50%"></img></td>
-                <td><img src = "tech_icon-03.png" style = "width: 50%"></img></td></tr>
-            <tr>
-                <td>49% of public research funding throughout the world comes from the U.S., amounting to $50.5B annually.</td>
-                <td>According to US News and World Reports, the US has 8 of the top 10 medical schools in the world.</td>
-                <td>We have more MRI, CT, and PET machines per capita than any other country.</td>
-            </tr>
-            <tr>
-                <td><a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></td>
-                <td><a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a></td>
-                <td><a href="http://stats.oecd.org/#" target="_blank">link</a></td>
-            </tr>
-            <tr>
-                <td>However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing.</td>
-                <td>However, the U.S. has fewer doctors per capita than most other industrialized nations.</td>
-                <td>However, we spend significantly more per capita than any other industrialized country.</td>
-            </tr>
-            <tr>
-                <td><a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></td>
-                <td><a href="https://data.oecd.org/healthres/doctors.html" target="_blank">link</a></td>
-                <td><a href="?" target="_blank">link</a></td>
-            </tr>
-        </table>
-        <p></p>
+
+        <div class="jumbotron">
+            <h1>U.S. Healthcare</h1>
+            <p>How do we save a broken system?</p> 
+        </div>
+        
+
+        <h2>Previous Successes</h2>
+
+        <div class="previous-successes">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Research</h3>
+                    <img src = "research_icon-03.png" style = "width: 50%" align="bottom"></img>
+                    <p>49% of public research funding throughout the world comes from the U.S., amounting to $50.5B annually. <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></p>
+                    <p>However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing. <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Education</h3>
+                    <img src = "education_icon-02.png" style = "width: 50%"></img>
+                    <p>According to US News and World Reports, the US has 8 of the top 10 medical schools in the world. <a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a></p>
+                    <p>However, the U.S. has fewer doctors per capita than most other industrialized nations. <a href="https://data.oecd.org/healthres/doctors.html" target="_blank">link</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Technology</h3>        
+                    <img src = "tech_icon-03.png" style = "width: 50%"></img>
+                    <p>We have more MRI, CT, and PET machines per capita than any other country. <a href="http://stats.oecd.org/#" target="_blank">link</a></p>
+                    <p>However, we spend significantly more per capita than any other industrialized country. <a href="http://www.google.com" target="_blank">link</a></p>
+                </div>
+            </div>
+        </div>
+
 
   
 
         <!-- TABS   -->
-        <h3>Biggest Challenges</h3>
+        <h2>Biggest Challenges</h2>
 
         <div class="container">
             <ul class="tabs">
@@ -131,7 +139,9 @@
             </div>
         </div>
 
-        <h3>Story</h3>
+        <br><br>
+
+        <h2>Story</h2>
 
         <div id="story">
 
@@ -140,30 +150,36 @@
 
         <p id="p-slide">What happened to cause Juhan’s misfortune? His heart stopped beating, to be sure. But at 27, hearts don’t simply stop beating. The saga began years before, when Juhan decided to pay a tax in place of paying for a</p>
             <div id="flip1">bronze plan</div>
-            <div id="panel1">Let's talk about costs...
+            <div id="panel1">
+                <h3>The U.S. spends far more on healthcare than any other industrialized nation.</h3>
                 <div class="embed-extra-info">
                         <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="middle"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
                 </div>
+                <p>say some stuff about the cost of U.S. healthcare</p>
             </div>
         <p id="p-slide"> on his state’s healthcare exchange. Why pay for something you don’t use? Without health insurance, Juhan stopped seeing his doctor and, as a result, stopped receiving vaccinations. After a particularly nasty bout with influenza, he began noticing symptoms of pneumonia and sought medical attention.
         </p><br><br>
 
         <p id="p-slide">Having no primary care doctor, Juhan went to an emergency room at a nearby hospital. He didn’t know it at the time because the information is hard to find, but the hospital across town might have been a more</p>
             <div id="flip2"> affordable choice</div>
-            <div id="panel2">Let's talk about costs...
+            <div id="panel2">
+                <h3>The U.S. spends far more on healthcare than any other industrialized nation.</h3>
                 <div class="embed-extra-info">
-                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="middle"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
                 </div>
+                <p>say some stuff about the cost of U.S. healthcare</p>
             </div>
         <p id="p-slide">(http://www.nytimes.com/2013/05/08/business/hospital-billing-varies-wildly-us-data-shows.html). As it happens, the hospital he chose uses a different EHR than his former doctor did, so none of Juhan’s medical information could be transferred. 
         </p><br><br>
 
         <p id="p-slide">Even though the symptoms and history clearly pointed to pneumonia, the doctors ordered a half</p>
             <div id="flip3">dozen unnecessary tests.</div>
-            <div id="panel3">Let's talk about costs...
+            <div id="panel3">
+                <h3>The U.S. spends far more on healthcare than any other industrialized nation.</h3>
                 <div class="embed-extra-info">
-                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
+                        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="middle"><a href="//data.oecd.org/chart/4kd9" target="_blank">OECD Chart: Health spending, Total, % of GDP, Annual, 1960 – 2012</a></iframe>
                 </div>
+                <p>say some stuff about the cost of U.S. healthcare</p>
             </div>
         <p id="p-slide">(http://archinte.jamanetwork.com/article.aspx?articleid=1106007 ). Meanwhile, they began to treat Juhan’s infection with amoxicillin. Juhan forgot about his allergy to amoxicillin, something that might have been prevented if his previous doctor had encouraged patients to engage with their own medical information (graphic). While the allergic reaction wasn’t fatal, it certainly didn’t help. Ultimately, lack of early care allowed the pneumonia to cause serious complications during Juhan’s hospital stay, culminating in cardiac arrest.
         </p><br><br>
@@ -176,7 +192,7 @@
                 <script>
 
                     var margin = {top: 20, right: 80, bottom: 30, left: 50},
-                        width = 960 - margin.left - margin.right,
+                        width = window.innerWidth*.8*.8,
                         height = 500 - margin.top - margin.bottom;
 
                     var parseDate = d3.time.format("%Y").parse;
@@ -270,12 +286,44 @@
                     });
 
                 </script>
-                </div>
+
+
+
             </div>
         <br><br>
 
-        <p id="p-slide">Even the traditional strongholds of medicine in the U.S. are dwindling. The U.S. leads the world in public funding for medical research. In 2011, the U.S. government invested $50.5 billion in medical research, accounting for 49% of public funding for medical research worldwide. But doesn’t paint the full picture. talk about decline of funding...Medical education...Technology
-        </p><br><br>
+        <p id="p-slide">Even the traditional strongholds</p>
+            <div id="flip5">strongholds</div>
+            <div id="panel5">
+                <h2>Previous Successes</h2>
+                
+                    <div class="previous-successes">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3>Research</h3>
+                                <img src = "research_icon-03.png" style = "width: 50%" align="bottom"></img>
+                                <p>49% of public research funding throughout the world comes from the U.S., amounting to $50.5B annually. <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></p>
+                                <p>However, U.S. spending on medical research been increasing by less than the inflation rate since 2012. Not only is funding decreasing, but funding as a percentage of GDP is also decreasing. <a href="http://jama.jamanetwork.com/article.aspx?articleid=2089336" target="_blank">link</a></p>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>Education</h3>
+                                <img src = "education_icon-02.png" style = "width: 50%"></img>
+                                <p>According to US News and World Reports, the US has 8 of the top 10 medical schools in the world. <a href="http://www.usnews.com/education/best-global-universities/clinical-medicine" target="_blank">link</a></p>
+                                <p>However, the U.S. has fewer doctors per capita than most other industrialized nations. <a href="https://data.oecd.org/healthres/doctors.html" target="_blank">link</a></p>
+                            </div>
+                            <div class="col-sm-4">
+                                <h3>Technology</h3>        
+                                <img src = "tech_icon-03.png" style = "width: 50%"></img>
+                                <p>We have more MRI, CT, and PET machines per capita than any other country. <a href="http://stats.oecd.org/#" target="_blank">link</a></p>
+                                <p>However, we spend significantly more per capita than any other industrialized country. <a href="http://www.google.com" target="_blank">link</a></p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        <p id="p-slide">of medicine in the U.S. are dwindling. The U.S. leads the world in public funding for medical research. In 2011, the U.S. government invested $50.5 billion in medical research, accounting for 49% of public funding for medical research worldwide. But doesn’t paint the full picture. talk about decline of funding...Medical education...Technology
+        </p>
+        <br><br>
 
         <p id="p-slide">Health is a human right, and healthcare is undeniably a public good. But government regulation and changing public perception isn’t the full answer. The patriarchal medical culture needs to change to embrace innovation and engage patients.
         </p><br><br>
