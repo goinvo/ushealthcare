@@ -20,8 +20,6 @@ h1 {
 
 p {
     font-size: 20px;
-    text-align: center;
-
 }
 
 
@@ -34,21 +32,24 @@ h3 {
 }
 
 
+
+
 /* TABLE */
 
 .previous-successes {
-    width: 80%;
     margin: auto;
 }
 
-
+.centeredImage {
+    text-align: center;
+}
 
 
 
 /* TABS */
 
 .container{
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -96,101 +97,21 @@ ul.tabs li.current{
 }
 
 
-/* FOOTER */
-.circle {
-    display: block;
-    margin: auto;
-}
 
-.floating-circle {
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 150;
-}
-
-.floating-footer {
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 50px;
-    background-color: white;
-    opacity: .7;
-    border-top-width: thick;
-    border-top-style: solid;
-    border-top-color: #336699;
-}
-
-.footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background-color: white;
-    opacity: 1;
-}
 
 
 
 /* SLIDE DOWN */
-#panel1 {
+#panel1, #panel2, #panel3, #panel4, #panel5 {
     background-color: #EDEDED;
     margin: auto;
     padding-top: 10px;
-    text-align: center;
+    text-align: left;
+    padding: 5%;
 }
 
 
-#flip1 {
-    font-size: 20px;
-    font-weight: 600;
-    display: inline;
-    background-color: yellow;
-}
-
-#panel2 {
-    background-color: #EDEDED;
-}
-
-#flip2 {
-    font-size: 20px;
-    font-weight: 600;
-    display: inline;
-    background-color: yellow;
-}
-
-#panel3 {
-    background-color: #EDEDED;
-}
-
-#flip3 {
-    font-size: 20px;
-    font-weight: 600;
-    display: inline;
-    background-color: yellow;
-}
-
-#panel4 {
-    background-color: #EDEDED;
-}
-
-#flip4 {
-    font-size: 20px;
-    font-weight: 600;
-    display: inline;
-    background-color: yellow;
-}
-
-#panel5 {
-    background-color: #EDEDED;
-    padding: 20px;
-    width: 80%;
-    margin: auto;
-}
-
-#flip5 {
+#flip1, #flip2, #flip3, #flip4, #flip5 {
     font-size: 20px;
     font-weight: 600;
     display: inline;
@@ -278,4 +199,42 @@ text.label {
 /* BIBLIOGRAPHY */
 #bib {
     text-align: left;
+}
+
+
+/* FOOTER */
+.circle {
+    display: block;
+    margin: auto;
+}
+
+.floating-circle {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150;
+}
+
+.floating-footer {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: white;
+    opacity: .7;
+    border-top-width: thick;
+    border-top-style: solid;
+    border-top-color: #336699;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: white;
+    opacity: 1;
+    text-align: center;
 }
