@@ -4,16 +4,17 @@
 
         <meta charset="utf-8">
         <script type="text/javascript" src="d3/d3.js"></script>
-       
-        <link href='style.css' rel='stylesheet'>
-
-
-
-
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css">
+
+         <link href='style.css' rel='stylesheet'>
+        <script type="text/javascript" src="js/spending.js"></script>
+        <script type="text/javascript" src="js/waste.js"></script>
+
+
+
+        
 
         <script>        //For the tab section 
              $(document).ready(function(){
@@ -148,10 +149,6 @@
         Having no primary care doctor, David went to the only place he thought he could; an emergency department at a nearby hospital. It’s hard to find information about quality and cost of care at specific hospitals, so he simply picked the one closest to his home.<a href="#s10"><sup>[10]</sup></a><a href="#s11"><sup>[11]</sup></a><a name="s10-11b"></a>
       </p>
 
-      <div class="embed-container">
-        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">Placeholder for graphic on cost transparency</a></iframe>
-      </div>
-
       <p id="p-slide">
         As it happens, the hospital he chose also uses a different 
       </p>
@@ -186,9 +183,28 @@
         Unsurprisingly, the EKG showed an arrhythmia, so the doctor admitted David for observation. Within the hour, David was given a bed, hooked up to a slew of monitoring equipment, and was having a full blood panel done.
       </p>
 
-      <div class="embed-container">
-        <iframe src="//data.oecd.org/chart/4kd9" width="860" height="645" style="border: 0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true" align="left"><a href="//data.oecd.org/chart/4kd9" target="_blank">Placeholder for graphic on cost transparency</a></iframe>
+      <br><br>
+
+      <h4 style="text-align:center;">Unnecessary testing means resources are being wasted</h4>
+      <div class="toggle-btn-grp cssonly">
+        <div>
+          <input type="radio" name="group4" id="totalProcedures"/>
+          <label onclick="" class="toggle-btn">Total Procedures</label>
+        </div>
+        <div>
+          <input type="radio" name="group4" id="unnecessaryProcedures"/>
+          <label onclick="" class="toggle-btn">Unnecessary Procedures</label>
+        </div>
+        <div>
+          <input type="radio" name="group4" id="dollarsWasted"/>
+          <label onclick="" class="toggle-btn">Dollars Wasted</label>
+        </div>
       </div>
+
+      <div id="waste-chart"></div>
+
+      <br>
+
 
       <p id="p-slide">
         After two days at the hospital, amounting to xyz dollars, David’s fever spiked and he began having chest pain. By the end of the week, a simple influenza admission turned into a case of
@@ -307,7 +323,13 @@
 
     <div id="story">
       <p id="p-slide"><a name="s29-32b"></a>
-        The health care system in the U.S. is in dire need of a transformation. Without a doubt health care is complex and nuanced, but even still we lag far behind most industrialized nations. We spend 8700 dollars per capita<a href="#s29"><sup>[29]</sup></a>[<strong>graph</strong>], more than any other nation. Despite this, we have worse outcomes, lower quality, and more limited access[graphs]. The
+        The health care system in the U.S. is in dire need of a transformation. Without a doubt health care is complex and nuanced, but even still we lag far behind most industrialized nations. We spend 8700 dollars per capita<a href="#s29"><sup>[29]</sup></a>[<strong>graph</strong>], more than any other nation. 
+      </p>
+
+      <div id="spending-capita-chart"></div>
+
+      <p id="p-slide">
+        Despite this, we have worse outcomes, lower quality, and more limited access[graphs]. The
       </p>
       <div id="flip5"> Patient Protection and Affordable Care Act</div>
       <div id="panel5">
@@ -389,7 +411,11 @@
       -->
 
 
+
+
     <h2>Bibliography</h2>
+
+    <br>
 
     <div id="bib">
       <ol class="references">
