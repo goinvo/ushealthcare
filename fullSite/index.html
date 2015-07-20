@@ -1,93 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
+        <title>Healing U.S. Healthcare</title>
         <meta charset="utf-8">
-        <script type="text/javascript" src="d3/d3.js"></script>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-         <link href='style.css' rel='stylesheet'>
+        <!--Vendor Libraries-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="d3/d3.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!--Custom JS-->
         <script type="text/javascript" src="js/spending.js"></script>
         <script type="text/javascript" src="js/waste.js"></script>
         <script type="text/javascript" src="js/sankey.js"></script>
+       
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link href='style.css' rel='stylesheet'>
 
-
-
-        
 
         <script>        //For the tab section 
-             $(document).ready(function(){
-            
-                $('ul.tabs li').click(function(){
-                    var tab_id = $(this).attr('data-tab');
+           $(document).ready(function(){
+          
+              $('ul.tabs li').click(function(){
+                var tab = $(this);
+                $('ul.tabs li, .tab-content').removeClass('current');
+                tab.addClass('current');
+                $("#"+tab.attr('data-tab')).addClass('current');
+              });
+              document.getElementById("totalProcedures").click();
 
-                    $('ul.tabs li').removeClass('current');
-                    $('.tab-content').removeClass('current');
-
-                    $(this).addClass('current');
-                    $("#"+tab_id).addClass('current');
-                    })
-                document.getElementById("totalProcedures").click()
-            })
+              // Slide down
+              $('#panel1').hide();
+              $('#flip1').click(function(){
+                  $('#panel1').slideToggle('slow');
+              });
+                          
+              $('#panel2').hide();
+              $('#flip2').click(function(){
+                  $('#panel2').slideToggle('slow');
+              });
+              
+              $('#panel3').hide();
+              $('#flip3').click(function(){
+                  $('#panel3').slideToggle('slow');
+              });
+              
+              $('#panel4').hide();
+              $('#flip4').click(function(){
+                  $('#panel4').slideToggle('slow');
+              });
+              
+              $('#panel5').hide();
+              $('#flip5').click(function(){
+                  $('#panel5').slideToggle('slow');
+              });
+          });
         </script>
-
-        <!-- SLIDE DOWN -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script> 
-            $(document).ready(function(){
-                $('#panel1').hide();
-                $('#flip1').click(function(){
-                    $('#panel1').slideToggle('slow');
-                });
-                            
-                $('#panel2').hide();
-                $('#flip2').click(function(){
-                    $('#panel2').slideToggle('slow');
-                });
-                
-                $('#panel3').hide();
-                $('#flip3').click(function(){
-                    $('#panel3').slideToggle('slow');
-                });
-                
-                $('#panel4').hide();
-                $('#flip4').click(function(){
-                    $('#panel4').slideToggle('slow');
-                });
-                
-                $('#panel5').hide();
-                $('#flip5').click(function(){
-                    $('#panel5').slideToggle('slow');
-                });
-            });
-        </script>
-
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-        <title>Healing U.S. Healthcare</title>
-
     </head>
 
   <body>
 
-    <div class="jumbotron">
+    <header class="jumbotron">
         <h1>Healing U.S. Healthcare</h1>
-        <p style="text-align:center;">How do we save a broken system?</p> 
-    </div>
-
-    <br><br>
-
-
-        
-
+        <p>How do we save a broken system?</p> 
+    </header>
+    <div class = "content">
     <h2>Symptoms</h2>
-
-    <br>
 
     <div id="story">
 
@@ -107,13 +89,13 @@
 
           <p>
             graph: average spending on health care in the US vs other countries <a href="https://data.oecd.org/healthres/health-spending.htm" target="_blank">source</a> 
-            <br>
+      
             graph: number of people with medical debt relative to number of people uninsured <a href="http://www.commonwealthfund.org/publications/issue-briefs/2015/jan/biennial-health-insurance-survey" target="_blank">source</a>
           </p>
         </div>
       <p id="p-slide">That’s if he’s lucky.
       </p>
-      <br><br>
+
 
       <p id="p-slide">
         What caused David’s misfortune? The saga began years before, when David decided to pay the 2% penalty tax<a href="#s3"><sup>[3]</sup></a><a name="s3b"></a> instead of paying $180/month for the
@@ -136,7 +118,7 @@
       
       <p id="p-slide">
         on Massachusetts’s healthcare exchange<a href="#s9"><sup>[9]</sup></a><a name="s9b"></a> At the time, he was convinced he was healthy. Why pay for something he wouldn’t use?
-      </p><br><br>
+    
 
       <p id="p-slide">
         Without health insurance, David stopped seeing his doctor. As a result, he also stopped receiving vaccinations [<strong>Pathway</strong>].
@@ -174,17 +156,17 @@
         system than his former doctor did, so none of David’s medical information could be accessed upon his arrival.
       </p>
 
-      <br><br>
+
 
       <p id="p-slide">
         David’s clinical presentation indicated influenza. While listening to David’s heart during the exam, the ED doctor noticed unusual rhythms. Worried that the cardiac event could be related to David’s influenza, the doctor ordered an EKG. [<strong>Pathway</strong>: If the EHR had been available], the doctor would have noticed the arrhythmia had been diagnosed years earlier. David had completely forgotten about the previous diagnosis [<strong>Pathway</strong>: Patients have access to personal data: what if he had access to his EHR? would he have remembered?].
-      </p><br><br>    
+        
 
       <p id="p-slide">
         Unsurprisingly, the EKG showed an arrhythmia, so the doctor admitted David for observation. Within the hour, David was given a bed, hooked up to a slew of monitoring equipment, and was having a full blood panel done.
       </p>
 
-      <br><br>
+
 
       <h4 style="text-align:center;">Unnecessary testing means resources are being wasted</h4>
       <div class="toggle-btn-grp cssonly">
@@ -204,7 +186,7 @@
 
       <div id="waste-chart"></div>
 
-      <br>
+
 
 
       <p id="p-slide">
@@ -230,22 +212,10 @@
 
     </div> <!-- end id="story"-->
 
-
-
-    <br><br><br>
-
-
     <!-- Line Graph -->
-
-
-
-
-
-
 
     <h2>History</h2>
 
-    <br>
     
     <div id="story">
       <p id="p-slide">
@@ -295,32 +265,30 @@
         </div>
       </div>
 
-      <br>
+
 
       <p id="p-slide"><a name="s23-24b"></a>
         A decade ago, the United States funded 57% of biomedical research around the globe. In 2015, the U.S. share has dropped down to 44%. Even though the US still spends more than twice the amount than any other country on medical research, federal spending is being cut<a href="#s23"><sup>[23]</sup></a> and support for biomedical research in the U.S. has lessened. Simultaneously, global interest in biomedical research is increasing,<a href="#s24"><sup>[24]</sup></a> decreasing the percentage of America’s share in global research.
       </p>
 
-      <br><br>
+
 
       <p id="p-slide"><a name="s25-27b"></a>
         According to the US News and World Reports, the US has 8 out of the top 10 medical schools in the world<a href="#s25"><sup>[25]</sup></a> and 17 of the top 20 hospitals in the world.<a href="#s26"><sup>[26]</sup></a> Despite the resources, the US still has less doctors per capita than other developed nations.<a href="#s27"><sup>[27]</sup></a>
       </p>
 
-      <br><br>
+
 
       <p id="p-slide"><a name="s28b"></a>
         The US has more MRI, CT, and PET machines per capita than any other country,<a href="#s28"><sup>[28]</sup></a> but we also spend more per capita than any other country.
       </p>
     </div>    <!-- end div id=story-->
 
-    <br><br><br>
 
 
         <!-- TABS   -->
     <h2>Diagnosis</h2>
 
-    <br>
 
     <div id="story">
       <p id="p-slide"><a name="s29-32b"></a>
@@ -353,7 +321,6 @@
       </p>
     </div>
 
-    <br>
 
     <div class="container">
 
@@ -389,7 +356,6 @@
       </div>
     </div>
 
-    <br><br>
 
 
     <h2>Prescription</h2>
@@ -397,13 +363,13 @@
 
         <p id="p-slide">
           A successful health care system provides everyone with access to affordable, high quality care. This means that everyone has health insurance and can get care when they need it. It means information about quality and costs is readily available, and people can make informed decisions about the care they purchase. 
-        </p><br><br>
+      
         <p id="p-slide">
           These are ambitious goals that will take years to achieve, but technology can expedite the process. Apps and wearables are already enabling more self-monitoring and self-care. The data from this continuous monitoring combined with information about your DNA sequence allows for individualized medicine where people only receive the treatments that will work for them. 
-        </p><br><br>
+      
         <p id="p-slide">
           Other challenges like reforming malpractice laws, incentivizing outcomes, and improving EHR interoperability will require legislative action. Some changes will be cultural. Why do we spend so much on end-of-life care that reduces quality of life? It’s time to destigmatize death. Likewise, medical culture needs to be more patient-centered, which requires giving people access to their own health data.
-        </p><br><br>
+      
         <p id="p-slide">
           Ultimately, everyone has a role in saving U.S. Health Care. Explore the ways you can make a difference and join the discussion by contributing your own ideas.
         </p>
@@ -415,8 +381,6 @@
 
 
 
-    <br><br>
-    <br><br>
 
 
       <!--
@@ -437,7 +401,6 @@
 
     <h2>Bibliography</h2>
 
-    <br>
 
     <div id="bib">
       <ol class="references">
@@ -574,8 +537,7 @@
 
       </ol>
     </div>
-
-    <br><br>
+  </div>
 
     <div class="footer">
       <p>

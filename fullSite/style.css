@@ -9,7 +9,7 @@ body {
     background-color: #F7F7F7;
     font-size: 30px;
     color: black;
-    padding: 20px;
+    padding: 0;
     text-align: center;
 
 }
@@ -20,6 +20,8 @@ h1 {
 
 p {
     font-size: 20px;
+    display: block;
+    margin: 2em 0;
 }
 
 
