@@ -115,7 +115,9 @@ ul.tabs li.current{
     font-size: 20px;
     font-weight: 600;
     display: inline;
-    background-color: yellow;
+    background-color: #D9C6E1;
+    cursor: pointer;
+
 }
 
 .embed-extra-info {
@@ -141,7 +143,7 @@ ul.tabs li.current{
 
 /* STORY */
 #story {
-    width: 80%;
+    width: 70%;
     margin: auto;
     text-align: left;
 }
@@ -218,7 +220,6 @@ div.tooltip {
 
 
 
-/* BAR CHART */
 
 /* BIBLIOGRAPHY */
 #bib {
@@ -272,9 +273,7 @@ div.tooltip {
 .bar_chart {
     background-color: #F3F1E8;
 }
-.scatter {
-    background-color: #F3F1E8;
-}
+
 .axis path,
 .axis line {
     fill: none;
@@ -292,14 +291,14 @@ div.tooltip {
     fill: #004363;
 }
 .bar:hover {
-  fill: lightgreen;
+  fill: #D9C6E1;
 }
 
 /* Bar Chart on Waste: Radio Buttons */
 
-label { 
+/*label { 
     padding:0.4em 2em 0.4em 0; 
-}
+}*/
 .toggle-btn-grp { 
     margin:3px 0; 
 }
@@ -313,61 +312,21 @@ label {
     display:inline-block; 
     border:solid 1px #CCC; 
     cursor:pointer;
-}
-
-.toggle-btn-grp.joint-toggle .toggle-btn:first-child { 
-    margin-left:2px; 
-    border-radius: 10px 0px 0px 10px; 
-}
-.toggle-btn-grp.joint-toggle .toggle-btn:last-child { 
-    margin-right:2px;  
-    border-radius: 0px 10px 10px 0px;
-    border-right:solid 1px #CCC;
-}
-
-
-.toggle-btn:hover { 
-    border:solid 1px #a0d5dc !important; 
-    background:#f1fdfe;
-}
-
-
-.toggle-btn.success { 
-    background:lightgreen;
-    border:solid 1px green !important; 
-}
-
-.visuallyhidden { 
-    border: 0; 
-    clip: rect(0 0 0 0); 
-    height: 1px; 
-    margin: -1px; 
-    overflow: hidden; 
-    padding: 0; 
-    position: absolute; 
-    width: 1px; 
-}
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { 
-    clip: auto; 
-    height: auto; 
-    margin: 0; 
-    overflow: visible; 
-    position: static; 
-    width: auto; 
+    vertical-align: middle;
 }
 
 .toggle-btn-grp.cssonly * {
     width:190px;
     height:60px;
     line-height:30px;
+    margin: auto;
 }
 .toggle-btn-grp.cssonly div {
     display:inline-block;
     position:relative;
-    margin:5px 20px;
+    margin:30px 0px;
 
 }
-
 .toggle-btn-grp.cssonly div label {
     position:absolute;
     z-index:0;
@@ -383,13 +342,12 @@ label {
 }
 
 .toggle-btn-grp.cssonly div:hover label {
-    border:solid 1px #a0d5dc !important; 
-    background:#f1fdfe;
+    background:#D9C6E1;
 }
 
 .toggle-btn-grp.cssonly div input:checked + label {
-    background:lightgreen;
-    border:solid 1px green !important; 
+    background:#EDEDED;
+    border:solid 3px #004363 !important; 
 }
 
 /* Axis */
@@ -404,3 +362,58 @@ label {
 .chart {
   display: block;
   margin: auto;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+/* SANKEY */
+.node rect {
+  /*cursor: move; /* changes icon cursor */
+  fill-opacity: .9;
+  shape-rendering: crispEdges;
+}
+
+.node text {
+  pointer-events: none;
+  /*text-shadow: 0 1px 0 #fff;*/
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #d3d3d3;
+  stroke-opacity: .5;
+}
+
+/* changes what happens to the link lines during mouseover */
+.link:hover { 
+  stroke: #939393;
+  stroke-opacity: 1;
+}

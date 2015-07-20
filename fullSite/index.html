@@ -11,6 +11,7 @@
          <link href='style.css' rel='stylesheet'>
         <script type="text/javascript" src="js/spending.js"></script>
         <script type="text/javascript" src="js/waste.js"></script>
+        <script type="text/javascript" src="js/sankey.js"></script>
 
 
 
@@ -19,16 +20,16 @@
         <script>        //For the tab section 
              $(document).ready(function(){
             
-            $('ul.tabs li').click(function(){
-                var tab_id = $(this).attr('data-tab');
+                $('ul.tabs li').click(function(){
+                    var tab_id = $(this).attr('data-tab');
 
-                $('ul.tabs li').removeClass('current');
-                $('.tab-content').removeClass('current');
+                    $('ul.tabs li').removeClass('current');
+                    $('.tab-content').removeClass('current');
 
-                $(this).addClass('current');
-                $("#"+tab_id).addClass('current');
-                })
-
+                    $(this).addClass('current');
+                    $("#"+tab_id).addClass('current');
+                    })
+                document.getElementById("totalProcedures").click()
             })
         </script>
 
@@ -68,14 +69,14 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
           <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-        <title>Saving U.S. Healthcare</title>
+        <title>Healing U.S. Healthcare</title>
 
     </head>
 
   <body>
 
     <div class="jumbotron">
-        <h1>U.S. Healthcare</h1>
+        <h1>Healing U.S. Healthcare</h1>
         <p style="text-align:center;">How do we save a broken system?</p> 
     </div>
 
@@ -392,6 +393,27 @@
 
 
     <h2>Prescription</h2>
+      <div id="story">
+
+        <p id="p-slide">
+          A successful health care system provides everyone with access to affordable, high quality care. This means that everyone has health insurance and can get care when they need it. It means information about quality and costs is readily available, and people can make informed decisions about the care they purchase. 
+        </p><br><br>
+        <p id="p-slide">
+          These are ambitious goals that will take years to achieve, but technology can expedite the process. Apps and wearables are already enabling more self-monitoring and self-care. The data from this continuous monitoring combined with information about your DNA sequence allows for individualized medicine where people only receive the treatments that will work for them. 
+        </p><br><br>
+        <p id="p-slide">
+          Other challenges like reforming malpractice laws, incentivizing outcomes, and improving EHR interoperability will require legislative action. Some changes will be cultural. Why do we spend so much on end-of-life care that reduces quality of life? It’s time to destigmatize death. Likewise, medical culture needs to be more patient-centered, which requires giving people access to their own health data.
+        </p><br><br>
+        <p id="p-slide">
+          Ultimately, everyone has a role in saving U.S. Health Care. Explore the ways you can make a difference and join the discussion by contributing your own ideas.
+        </p>
+
+      </div>
+
+
+      <div id="sankey-chart"></div>
+
+
 
     <br><br>
     <br><br>

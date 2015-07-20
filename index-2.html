@@ -1,7 +1,82 @@
-$( document ).ready(function() {
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: gray;
+  stroke-width: 1.5px;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.label-hover{
+  opacity: 0;
+}
+
+.linepoint{
+  opacity: 0;
+  fill: gray;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+path.invisible {
+  fill: none;
+  stroke: rgba(0,0,0,0);
+  stroke-width: 8px;
+}
+
+text.label {
+  font-size: 10px;
+  color: #000;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 125px;
+  height: auto;
+  padding: 5px;
+  font: 10px sans-serif;
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: gray;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script type = "text/javascript">
 
 var margin = {top: 20, right: 50, bottom: 30, left: 50},
-    width = window.innerWidth*.8 - margin.left - margin.right,
+    width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y").parse;
@@ -30,11 +105,11 @@ var line = d3.svg.line()
     .y(function(d) { return y(d.capita); })
     .defined(function(d) { return d.capita != null;});
 
-var div = d3.select("#spending-capita-chart").append("div")
+var div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-var svg = d3.select("#spending-capita-chart").append("svg")
+var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -49,6 +124,7 @@ d3.csv("data_capita.csv", function(error, data) {
     d.date = parseDate(d.date);
   });
 
+console.log(data[0]);
 
   var countries = color.domain().map(function(name) {
     return {
@@ -163,12 +239,12 @@ d3.csv("data_capita.csv", function(error, data) {
         .filter(function(p) { return p.name == d.name; })
         .style("opacity", 1)
         .style("stroke-width", 3)
-      div.transition()
-        .duration(200)
-        .style("opacity", 1);
-      div.html(d.name)
-        .style("left", (d3.event.pageX + 5) + "px")
-        .style("top", (d3.event.pageY + 5) + "px");
+    div.transition()
+      .duration(200)
+      .style("opacity", 1);
+    div.html(d.name)
+      .style("left", (d3.event.pageX + 5) + "px")
+      .style("top", (d3.event.pageY + 5) + "px");
 
     })
     .on("mouseout", function(d){
@@ -182,4 +258,5 @@ d3.csv("data_capita.csv", function(error, data) {
         .style("opacity", 0)
     })
 });
-});
+
+</script>

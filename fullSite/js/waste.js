@@ -19,9 +19,9 @@ var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient("bottom");
 
-var yScale = d3.scale.linear()      // Unnecessary
+var yScale = d3.scale.log()      // Unnecessary
     //.domain([1, d3.max(dataset)])
-    .range([h, 5]);
+    .range([h+5, 5]);
 
 var yAxis = d3.svg.axis()
     .scale(yScale)
@@ -73,15 +73,16 @@ d3.csv("data-waste.csv", function(error, data) {
     yScale.domain([1, maxProcedures]);
 
     wasteSVG.append("g")
-          .attr("class", "x axis")
+          .attr("class", "xaxis")
           .attr("transform", "translate(0," + h + ")")
           .call(xAxis)
           .selectAll(".tick text")
           .call(wrap, xScale.rangeBand());
 
     var myAxis = wasteSVG.append("g")
-        .attr("class", "y axis")
+        .attr("class", "yaxis")
         .call(yAxis)
+        .attr()
         .style("fill", "black")
         .attr('transform', 'translate(100,0)')
         .append("text")
@@ -109,76 +110,72 @@ d3.csv("data-waste.csv", function(error, data) {
             return h - yScale(d.NumberProcedures);
         });
 
+
 // Toggle between datasets
 
 
 d3.select("#totalProcedures")
     .on("click", function() {
         yScale.domain([1, maxProcedures]);
-        yAxis.scale(yScale);
-
 
         rectangles.transition()
-            .duration(500)
+            .duration(1000)
             .delay(50)
-            .ease('linear')
+            .ease('sin-in-out')
             .attr("y", function(d, i) {
                 return yScale(d.NumberProcedures);
             })
             .attr("height", function(d, i) {
                 return h - yScale(d.NumberProcedures);
             });
-        myAxis.transition()
-            .duration(500)
+        wasteSVG.select(".yaxis")
+            .transition().duration(1000)
             .delay(50)
-            .ease('linear')
-            .call(yAxis);
+            .ease('sin-in-out')
+            .call(yAxis)
     });
 
 d3.select("#unnecessaryProcedures")
     .on("click", function() {
         yScale.domain([1, maxUnnecessary]);
-        yAxis.scale(yScale);
 
         rectangles.transition()
-            .duration(500)
+            .duration(1000)
             .delay(50)
-            .ease('linear')
+            .ease('sin-in-out')
             .attr("y", function(d) {
                 return yScale(d.Unnecessary);
             })
             .attr("height", function(d) {
                 return h - yScale(d.Unnecessary);
             });
-        myAxis.transition()
-            .duration(500)
+        wasteSVG.select(".yaxis")
+            .transition().duration(1000)
             .delay(50)
-            .ease('linear')
-            .call(yAxis);
+            .ease('sin-in-out')
+            .call(yAxis)
     });
 
 
 d3.select("#dollarsWasted")
     .on("click", function() {
         yScale.domain([1, maxWaste]);
-        yAxis.scale(yScale);
-
 
         rectangles.transition()
-            .duration(500)
+            .duration(1000)
             .delay(50)
-            .ease('linear')
+            .ease('sin-in-out')
             .attr("y", function(d) {
                 return yScale(d.Waste);
             })
             .attr("height", function(d) {
                 return h - yScale(d.Waste);
             });
-        myAxis.transition()
-            .duration(500)
+        wasteSVG.select(".yaxis")
+            .transition().duration(1000)
             .delay(50)
-            .ease('linear')
-            .call(yAxis);
+            .ease('sin-in-out')
+            .call(yAxis)
     });
 });
 });
